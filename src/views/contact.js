@@ -36,7 +36,7 @@ const Contact = (props) => {
                 <span className="contact-text01">Services</span>
                 <PrimaryBlueButton11></PrimaryBlueButton11>
                 <div className="contact-container03">
-                  <button className="contact-button ButtonSmall button">
+                  <button className="contact-button button ButtonSmall">
                     <img
                       alt="image"
                       src="/external/at-sign1.svg"
@@ -142,57 +142,57 @@ const Contact = (props) => {
           <br></br>
         </span>
         <form
-          method="POST"
-          action="https://formspree.io/f/xyyqvqvv"
-          enctype="multipart/form-data"
           id="contact-form"
+          action="https://formspree.io/f/xyyqvqvv"
+          method="POST"
+          enctype="multipart/form-data"
           className="contact-form1"
         >
           <label className="contact-text14 Label">Your Address</label>
           <input
             type="text"
-            placeholder="Ex: Ashley, Evan, Herman, Louise..."
             name="first-name"
             required
             autoFocus
+            placeholder="Ex: Ashley, Evan, Herman, Louise..."
             className="contact-textinput Small input"
           />
           <label className="contact-text15 Label">Email Address</label>
           <input
             type="email"
-            placeholder="Ex: info@arborlifedesigns.net"
+            name="email"
             rows="Ex: 1787 Botanical Boulevard, Houston, Texas  #77027"
             enctype="Ex: 1787 Botanical Boulevard, Houston, Texas  77027"
-            name="email"
             required
+            placeholder="Ex: info@arborlifedesigns.net"
             className="contact-textinput1 Small input"
           />
           <label className="contact-text16 Label">Physical Address</label>
           <input
             type="text"
-            placeholder="Ex: 1787 Botanical Boulevard, Houston, Texas #77027"
+            name="address"
             rows="Ex: 1787 Botanical Boulevard, Houston, Texas  #77027"
             enctype="Ex: 1787 Botanical Boulevard, Houston, Texas  77027"
             required
-            name="address"
-            className="contact-textinput2 Small input"
+            placeholder="Ex: 1787 Botanical Boulevard, Houston, Texas #77027"
+            className="contact-textinput2 input Small"
           />
           <label className="contact-text17 Label">Phone Number</label>
           <input
             type="tel"
-            placeholder="Ex: +1 (281)-914-7788"
+            name="phone"
             rows="Ex: 1787 Botanical Boulevard, Houston, Texas  #77027"
             enctype="Ex: +1 (281)-914-7788"
             required
-            name="phone"
+            placeholder="Ex: +1 (281)-914-7788"
             className="contact-textinput3 Small input"
           />
           <label className="contact-text18 Label">Comments</label>
           <textarea
-            rows="8"
-            placeholder="Ex: I request your services because..."
-            target="Ex: I'd like to install some lights"
             name="message"
+            rows="8"
+            target="Ex: I'd like to install some lights"
+            placeholder="Ex: I request your services because..."
             className="contact-textarea textarea Small"
           ></textarea>
           <h2 id="form-status" className="contact-text19">
@@ -202,8 +202,8 @@ const Contact = (props) => {
             <div className="contact-container06">
               <div className="contact-container07">
                 <button
-                  type="submit"
                   id="contact-button"
+                  type="submit"
                   className="contact-button1 button ButtonSmall"
                 >
                   Deliver Message

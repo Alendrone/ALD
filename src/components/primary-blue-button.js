@@ -8,9 +8,9 @@ const PrimaryBlueButton = (props) => {
   return (
     <div className="primary-blue-button-container">
       <button
-        type="submit"
         id="contact-button"
-        className="primary-blue-button-button button ButtonSmall"
+        type="submit"
+        className="primary-blue-button-button ButtonSmall button"
       >
         {props.button}
       </button>
