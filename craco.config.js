@@ -4,7 +4,7 @@ module.exports = {
     css: {
       loaderOptions: () => {
         return {
-          url: true,
+          url: false,
         };
       },
     },
