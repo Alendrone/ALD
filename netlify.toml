@@ -1,0 +1,5 @@
+[[redirects]]
+ from = "https://m.arborlifedesigns.net"
+ to = "https://arborlifedesigns.net/contact"
+ status = 200
+ force = true
