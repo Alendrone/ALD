@@ -8,7 +8,7 @@ export default async (req, context) => {
   return new Response(`${data}`);
 }
 
-//export const config = {
-//  method: "POST",
+export const config = {
+method: "POST"
 //  path: "/m"
-//}
+}
