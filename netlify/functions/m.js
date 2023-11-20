@@ -2,11 +2,12 @@ import { Resend } from 'resend';
 
 exports.handler = async (event, context) => {
  try {
-    const {name,email,address,phone,message} = JSON.parse(event.body),
+   // const {name,email,address,phone,message} = JSON.parse(event.body),
+    const body = JSON.parse(event.body),
     resend = new Resend('re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK'),
     uid = Math.floor(Date.now() / 1000).toString();
  } catch (err) {
-  return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}\nMessage:\n"${message}"\nEmail:\n"${email}"\nLocation:\n"${address}"\nPhone:\n"${phone}"`})};
+  return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}\n${body}`})};
  }
  try {
   await resend.emails.send({
@@ -26,7 +27,7 @@ exports.handler = async (event, context) => {
  });
   return {
     statusCode: 400,
-      body: JSON.stringify( { success: `Mail delivered from ${name}` } ),
+    body: JSON.stringify( { success: `Mail delivered from ${name}` } ),
     };
   } catch (err) {
     return {
