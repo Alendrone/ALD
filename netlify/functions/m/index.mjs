@@ -4,7 +4,7 @@ import { Config, Context } from "@netlify/functions";
 export default async (req, context) => {
    //const {name,email,address,phone,message} = JSON.parse(event.body),
   const data = await req.text();
-  await processData(data);
+ // await processData(data);
   return new Response(`${data}`);
 }
 
