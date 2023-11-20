@@ -10,7 +10,6 @@ exports.handler = async (event, context) => {
     statusCode: 400,
     body: JSON.stringify( { success: `Mail delivered from ${body}` } ),
     };
-  }
  } catch (err) {
   return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}\n${body}`})};
  }
