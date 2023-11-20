@@ -7,7 +7,6 @@ export default async (req: Request, context: Context) => {
   await processData(data);
   return new Response(`data`);
 }
-}
 
 export const config: Config = {
   method: "POST",
