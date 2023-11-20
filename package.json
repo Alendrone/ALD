@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "resend", ">=2.0.0"
+    "resend", ">=2.0.0",
     "parcel-bundler": "^1.6.1"
   },
   "scripts": {
