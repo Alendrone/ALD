@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     resend = new Resend('re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK'),
     uid = Math.floor(Date.now() / 1000).toString();
  } catch (err) {
-  return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}`})};
+  return {statusCode:400,body:JSON.stringify({error:`Malformed Request: ${err}\nMessage:\n"${message}"\nEmail:\n"${email}"\nLocation:\n"${address}"\nPhone:\n"${phone}"`})};
  }
  try {
   await resend.emails.send({
