@@ -9,6 +9,6 @@ export default async (req, context) => {
 }
 
 export const config = {
-method: "POST"
+method: "GET"
 //path: "/contact"
 }
