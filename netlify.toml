@@ -3,3 +3,8 @@
  to = "https://arborlifedesigns.net/contact"
  status = 200
  force = true
+ 
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
