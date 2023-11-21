@@ -24,13 +24,13 @@ exports.handler = async function (event, context) {
  try {
    return {
      statusCode: 200,
-     body: { message: `<h2>Success!</h2>` },
+     body: `<h2>Success!</h2>`,
    };
  }
   catch (err) {
     return {
       statusCode:400,
-      body:{message:`<h2>Oops. Something is a afoot!</h2>`},
+      body:`<h2>Oops. Something is a afoot!</h2>`,
     };
   }
 };
