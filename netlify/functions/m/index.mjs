@@ -21,6 +21,7 @@ exports.handler = async function (event, context) {
     } else submit[decodedKey] = decodedValue;
  }
  try {
+   var {name,email,address,phone,message} = submit;
    return {
      statusCode: 200,
      headers: {
