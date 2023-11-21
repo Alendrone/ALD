@@ -8,7 +8,7 @@ export default async (req, context) => {
   return new Response(`Sucess!`);
 }
 
-export const config = {
-method: "GET"
+//export const config = {
+//method: "GET"
 //path: "/contact"
-}
+//}
