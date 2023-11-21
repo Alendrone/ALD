@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
   catch (err) {
     return {
       statusCode:400,
-      body:JSON.stringify( {message:`<h2>Oops. Something is a afoot!</h2>` }),
+      body:{message:`<h2>Oops. Something is a afoot!</h2>`}),
     };
   }
 };
