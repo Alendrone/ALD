@@ -20,7 +20,7 @@ exports.handler = async function (event, context) {
     submit[decodedKey].push(decodedValue);
     } else submit[decodedKey] = decodedValue;
  }
-var name = JSON.parse(JSON.stringify(submit.firstname));
+var name = submit.firstname;
  try {
    return {
      statusCode: 200,
