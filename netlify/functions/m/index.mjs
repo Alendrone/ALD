@@ -1,7 +1,7 @@
 //import {Resend} from "resend";
 
 exports.handler = async function (event, context) {
-  var body = JSON.stringify(event.body),
+  var body = event.body,
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = {},
   arr = [],
