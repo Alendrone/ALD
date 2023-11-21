@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
     var [key, value] = params[i - 1].split("="),
     decodedKey = decodeURIComponent(key),
     decodedValue = decodeURIComponent(value);
-    arr.push(decodedValue);
+    arr.push(value);
     
     if (submit.hasOwnProperty(decodedKey)) {
       if (!Array.isArray(submit[decodedKey])) {
