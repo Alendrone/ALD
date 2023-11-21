@@ -1,8 +1,8 @@
-//import { Resend } from 'resend';
-//import { Config, Context } from "@netlify/functions";
+//import {Resend} from "resend";
 
 exports.handler = async function (event, context) {
   var body = JSON.stringify(event.body),
+  uid = Math.floor(Date.now() / 1000).toString(),
   submit = {},
   params = body.split("&"),
   i = params.length;
@@ -21,13 +21,16 @@ exports.handler = async function (event, context) {
     } else submit[decodedKey] = decodedValue;
  }
   
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: `${e}` }),
-  };  
+ try {
+   return {
+     statusCode: 200,
+     body: JSON.stringify({ message: `<h2>Success!</h2>` }),
+   };
+ }
+  catch (err) {
+    return {
+      statusCode:400,
+      body:JSON.stringify( {message:`<h2>Oops. Something is a afoot!</h2>` }),
+    };
+  }
 };
-
-//export const config = {
-//method: "GET"
-//path: "/contact"
-//}
