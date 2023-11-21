@@ -20,8 +20,8 @@ exports.handler = async function (event, context) {
     submit[decodedKey].push(decodedValue);
     } else submit[decodedKey] = decodedValue;
  }
+ var {firstname,email,address,phone,message} = submit;
  try {
-   var {firstname,email,address,phone,message} = submit;
    return {
      statusCode: 200,
      headers: {
