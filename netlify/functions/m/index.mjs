@@ -23,6 +23,7 @@ exports.handler = async function (event, context) {
     } else submit[decodedKey] = decodedValue;
  }
  try {
+   arr[4] = arr[4].split('+')[0];
    return {
      statusCode: 200,
      headers: {
