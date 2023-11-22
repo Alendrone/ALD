@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
     from: "ALD <info@arborlifedesigns.net>",
     to: ["delivered@resend.dev","evanducote@gmail.com","ducote.help@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
-    text: `Message:\n"${submit[4]}"\nEmail:\n"${submit[1]}"\nLocation:\n"${address[2]}"\nPhone:\n"${phone[3]}"`,
+    text: `Message:\n"${submit[4]}"\nEmail:\n"${submit[1]}"\nLocation:\n"${submit[2]}"\nPhone:\n"${submit[3]}"`,
     headers: {
       "X-Entity-Ref-ID":uid,
     },
