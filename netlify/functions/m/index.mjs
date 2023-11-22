@@ -10,8 +10,8 @@ exports.handler = async function (event, context) {
   //params[i - 1].split("=");
   for (;i;--i) {
     if (i & 1) continue;
-    params = params[cur].split("=");
     var cur = i - 1;
+    params = params[cur].split("=");
     submit[cur] = decodeURIComponent(params[cur]);
     if (submit[cur].indexOf("+") + 1) submit[cur] = submit[cur].split("+").join(" ");
  }
