@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
  }
  try {
    if (!submit.length) throw null;
-   await resend.emails.send({
+   /*await resend.emails.send({
     from: "ALD <info@arborlifedesigns.net>",
     to: ["arborlifedesigns@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
@@ -31,7 +31,7 @@ exports.handler = async function (event, context) {
       value: "email_submission",
     },
   ],
- }); 
+ }); */
    return {
      statusCode: 200,
      headers: {
