@@ -15,7 +15,6 @@ exports.handler = async function (event, context) {
     if (submit[cur].indexOf("+") + 1) submit[cur] = submit[cur].split("+").join(" ");
  }
  try {
-   submit[4] = submit[4].split('+')[0];
    return {
      statusCode: 200,
      headers: {
