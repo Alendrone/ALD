@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
   submit = [],
   params = body.split("&"),
   i = params.length;
-  params = params.split("=")
+  params = params.split("=");
   
   //params[i - 1].split("=");
   for (;i;--i) {
