@@ -6,11 +6,11 @@ exports.handler = async function (event, context) {
   submit = [],
   params = body.split("&"),
   i = params.length;
-  params = params.split("=");
   
   //params[i - 1].split("=");
   for (;i;--i) {
     if (i & 1) continue;
+    params = params[cur].split("=");
     var cur = i - 1;
     submit[cur] = decodeURIComponent(params[cur]);
     if (submit[cur].indexOf("+") + 1) submit[cur] = submit[cur].split("+").join(" ");
