@@ -4,7 +4,6 @@ exports.handler = async function (event, context) {
   var body = event.body,
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = {},
-  arr = [],
   params = body.split("&"),
   i = params.length;
   
@@ -12,7 +11,6 @@ exports.handler = async function (event, context) {
     var [key, value] = params[i - 1].split("="),
     decodedKey = decodeURIComponent(key),
     decodedValue = decodeURIComponent(value);
-    arr.push(decodedValue);
     
     if (submit.hasOwnProperty(decodedKey)) {
       if (!Array.isArray(submit[decodedKey])) {
@@ -23,7 +21,7 @@ exports.handler = async function (event, context) {
     } else submit[decodedKey] = decodedValue;
  }
  try {
-   arr[4] = arr[4].split('+')[0];
+   submit.firstname = submit.firstname.split('+')[0];
    return {
      statusCode: 200,
      headers: {
