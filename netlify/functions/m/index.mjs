@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
     if (submit[cur].indexOf("+") + 1) submit[cur] = submit[cur].split("+").join(" ");
  }
  try {
-   if (!submit.length) throw null;
+   if (submit.length) throw null;
    /*await resend.emails.send({
     from: "ALD <info@arborlifedesigns.net>",
     to: ["arborlifedesigns@gmail.com"],
