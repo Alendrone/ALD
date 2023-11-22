@@ -19,7 +19,7 @@ exports.handler = async function (event, context) {
    if (!submit.length) throw null;
    await resend.emails.send({
     from: "ALD <info@arborlifedesigns.net>",
-    to: ["ducotehelp@gmail.com"],
+    to: ["evanducote@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
     text: `Message:\n"${submit[4]}"\nEmail:\n"${submit[1]}"\nLocation:\n"${submit[2]}"\nPhone:\n"${submit[3]}"`,
     headers: {
