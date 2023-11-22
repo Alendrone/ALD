@@ -1,5 +1,5 @@
 //import {Resend} from "resend";
-
+//resend = new Resend("re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK"), 
 exports.handler = async function (event, context) {
   var body = event.body,
   uid = Math.floor(Date.now() / 1000).toString(),
