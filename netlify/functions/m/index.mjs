@@ -4,8 +4,9 @@ exports.handler = async function (event, context) {
   var body = event.body,
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = [],
-  params = body.split("&").split("="),
+  params = body.split("&"),
   i = params.length;
+  params = params.split("=")
   
   //params[i - 1].split("=");
   for (;i;--i) {
