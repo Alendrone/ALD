@@ -1,7 +1,8 @@
-//import {Resend} from "resend";
+import {Resend} from "resend";
 
 exports.handler = async function (event, context) {
   var body = event.body,
+  resend = new Resend("re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK"),
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = [],
   params = body.split("&"),
@@ -16,6 +17,21 @@ exports.handler = async function (event, context) {
  }
  try {
    if (!submit.length) throw null;
+   await resend.emails.send({
+    from: "ALD <info@arborlifedesigns.net>",
+    to: ["delivered@resend.dev","evanducote@gmail.com","ducote.help@gmail.com"],
+    subject: `Inbound Correspondence from ${submit[0]}`,
+    text: `Message:\n"${submit[4]}"\nEmail:\n"${email[1]}"\nLocation:\n"${address[2]}"\nPhone:\n"${phone[3]}"`,
+    headers: {
+      "X-Entity-Ref-ID":uid,
+    },
+  tags: [
+    {
+      name: "category",
+      value: "email_submission",
+    },
+  ],
+ }); 
    return {
      statusCode: 200,
      headers: {
