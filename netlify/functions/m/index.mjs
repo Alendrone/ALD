@@ -1,13 +1,13 @@
-//import {Resend} from "resend";
-//resend = new Resend("re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK"), 
+import {Resend} from "resend";
+
 exports.handler = async function (event, context) {
   var body = event.body,
+  resend = new Resend("re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK"), 
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = [],
   params = body.split("&"),
   i = params.length;
   
-  //params[i - 1].split("=");
  for (;i;--i) {
     var cur = i - 1;
     params[cur] = params[cur].split("=");
@@ -16,11 +16,11 @@ exports.handler = async function (event, context) {
  }
  try {
    if (!event.body.length) throw null;
-   /*await resend.emails.send({
+   await resend.emails.send({
     from: "ALD <info@arborlifedesigns.net>",
     to: ["arborlifedesigns@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
-    text: `Message:\n"${submit[4]}"\nEmail:\n"${submit[1]}"\nLocation:\n"${submit[2]}"\nPhone:\n"${submit[3]}"`,
+    text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
     headers: {
       "X-Entity-Ref-ID":uid,
     },
@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
       value: "email_submission",
     },
   ],
- }); */
+ });
    return {
      statusCode: 200,
      headers: {
