@@ -8,6 +8,9 @@
        transform: scale(1);
      }
 }
+.mobile-menu{
+  transition:animation 1180ms, display 1180ms;
+}
 .primary-blue-button11-container {
   font-size: 1.25rem;
 }
