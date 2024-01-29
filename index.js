@@ -9,7 +9,7 @@ hmbr.addEventListener("click",function () {
 });
 
 exit.addEventListener("click",function () {
-  mnu.style.transition = "opacity 1180ms";
   mnu.style.opacity = "0";
+  mnu.style.transition = "opacity 1180ms";
   mnu.style.display = "none";
 });
