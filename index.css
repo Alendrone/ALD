@@ -477,7 +477,7 @@
   align-items: flex-start;
   border-radius: var(--dl-radius-radius-radius1);
   flex-direction: column;
-  backdrop-filter: saturate(200%) blur(30px);
+  backdrop-filter: saturate(200%) blur(1.5rem);
   background-color: hsla(0,0%,100%,.8);
 }
 .landing-container04 {
