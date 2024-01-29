@@ -8,6 +8,6 @@ hmbr.addEventListener("click",function () {
 });
 
 exit.addEventListener("click",function () {
-  mnu.style.display = "none";
   mnu.style.animation = "pop-in 1180ms ease-out 0s 1 reverse";
+  mnu.style.display = "none";
 });
