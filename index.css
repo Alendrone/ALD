@@ -14,7 +14,7 @@
 .ctalink a {
   display:inline-block;
   padding-bottom:.25rem;
-  color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, 1);
   border-bottom: .1em solid rgba(0, 0, 0, .5);
   filter: drop-shadow(0 .2rem .15rem rgba(0, 0, 0, 0.7)) drop-shadow(0 .4rem .65rem rgba(0, 0, 0,0.2)) drop-shadow(0 .9rem 1.15rem rgba(0, 0, 0, 0.2));
 }
