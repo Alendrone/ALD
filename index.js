@@ -3,11 +3,11 @@ mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu");
 
 hmbr.addEventListener("click",function () {
-  setTimeout(function() {mnu.style.animation = "popin 5s ease-in";},1180);
+  setTimeout(function() {mnu.style.animation = "popin 1180ms ease-in";},1180);
   mnu.style.display = "flex";
 });
 
 exit.addEventListener("click",function () {
-  setTimeout(function() {mnu.style.animation = "popin 5s ease-out reverse";},1180);
+  setTimeout(function() {mnu.style.animation = "popin 1180ms ease-out reverse";},1180);
   mnu.style.display = "none";
 });
