@@ -6,15 +6,14 @@ mnu.style.visibility = "hidden";
 mnu.style.display = "flex";
 
 hmbr.addEventListener("click",function () {
-  mnu.style.animation =  "popin 1180ms";
-  mnu.style.transition = "opacity 1180ms";
+  mnu.classList.add("intraexo");
   mnu.style.visibility = "visible";
   mnu.style.opacity = "1";
   //mnu.style.display = "flex";
 });
 
 exit.addEventListener("click",function () {
-  mnu.style.animationName = "popin";
+  mnu.classList.add("intraexo");
   mnu.style.visibility = "hidden";
   mnu.style.opacity = "0";
   //mnu.style.display = "none";
