@@ -8,7 +8,7 @@
        transform: scale(1);
      }
 }
-#mobile-menu {
+.intraexo {
   animation: popin 1180ms ease-in;
 }
 .primary-blue-button11-container {
