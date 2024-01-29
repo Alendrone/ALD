@@ -7,12 +7,14 @@ mnu.style.display = "flex";
 
 hmbr.addEventListener("click",function () {
   mnu.style.animationName =  "popin";
+  mnu.style.visibility = "visible";
   mnu.style.opacity = "1";
   //mnu.style.display = "flex";
 });
 
 exit.addEventListener("click",function () {
   mnu.style.animationName = "popin";
+  mnu.style.visibility = "hidden";
   mnu.style.opacity = "0";
   //mnu.style.display = "none";
 });
