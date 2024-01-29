@@ -14,8 +14,8 @@
   border-radius:.05rem;*/
 }
 .ctalink a {
-  color: #FFF;
-  border-bottom: .1em solid #e8e1d8;
+  color: rgba(13, 110, 253, 1);
+  border-bottom: .1em solid rgba(13, 110, 253, .5);
   filter: drop-shadow(0 .2rem .15rem rgba(0,0,0,0.7)) drop-shadow(0 .4rem .65rem rgba(0,0,0,0.2)) drop-shadow(0 .9rem 1.15rem rgba(0,0,0,0.2));
 }
 .primary-blue-button11-container {
