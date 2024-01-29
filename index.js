@@ -5,7 +5,6 @@ exit = document.getElementById("close-menu");
 hmbr.addEventListener("click",function () {
   mnu.style.display = "flex";
   mnu.focus();
-  mnu.addEventListener("animationstart",function(){mnu.style.display = "flex";},{once:true});
 });
 
 exit.addEventListener("click",function () {
