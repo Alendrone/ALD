@@ -8,8 +8,8 @@
        transform: scale(1);
      }
 }
-.intraexo {
-  animation: popin 1180ms ease-in;
+#mobile-menu:active {
+  animation: popin 1180ms ease-in 1 0s forwards;
 }
 .primary-blue-button11-container {
   font-size: 1.25rem;
