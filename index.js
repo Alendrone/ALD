@@ -3,8 +3,8 @@ mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu");
 
 hmbr.addEventListener("click",function () {
-  mnu.style.transition = "opacity 1180ms";
   mnu.style.opacity = "1";
+  mnu.style.transition = "opacity 1180ms";
   mnu.style.display = "flex";
 });
 
