@@ -7,7 +7,7 @@
      }
 }
 #mobile-menu:active {
-  animation: popin 1180ms ease-in 1 0s forwards;
+  animation: popin 1180ms !important;
 }
 .primary-blue-button11-container {
   font-size: 1.25rem;
