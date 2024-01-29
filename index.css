@@ -754,6 +754,13 @@
   border-radius: 1.5rem;
 }
 @media(max-width: 1363px) {
+  #form-status {
+    visibility:hidden;
+    touch-action:none;
+    display:none;
+    opacity:0;
+    pointer-events:none;
+  }
   .landing-card {
     margin-right: 0 auto;
   }
