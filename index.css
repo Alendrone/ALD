@@ -9,8 +9,8 @@
      }
 }
 .mobile-menu{
-  transition:animation 2.09s, display 2.09s;
-  animation:popin 2.09s ease-in;
+  transition:animation 5s, display 5s;
+  animation:popin 5s ease-in;
 }
 .primary-blue-button11-container {
   font-size: 1.25rem;
