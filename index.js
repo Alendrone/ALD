@@ -3,13 +3,11 @@ mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu");
 
 hmbr.addEventListener("click",function () {
-  mnu.style.opacity = "1";
   mnu.style.animationName =  "popin";
-  mnu.style.display = "flex";
+  setTimeout(function() {mnu.style.display = "flex";},1180);
 });
 
 exit.addEventListener("click",function () {
-  mnu.style.opacity = "0";
   mnu.style.animationName = "popin";
-  mnu.style.display = "none";
+  setTimeout(function() {mnu.style.display = "none";},1180);
 });
