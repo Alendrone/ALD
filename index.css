@@ -3,7 +3,7 @@
   padding: .6rem .8rem;
   border-radius: 0.75rem;
   border: 0.05rem solid rgba(255,255,255,0.1);
-  color: rgba(13, 110, 253, 1);
+  color: rgba(173, 230, 216, 1);
   letter-spacing: 0.1rem;
   cursor: pointer;
   font-weight:bold;
@@ -14,9 +14,9 @@
   border-radius:.05rem;*/
 }
 .ctalink a {
-  color: rgba(13, 110, 253, 1);
-  border-bottom: .1em solid rgba(13, 110, 253, .5);
-  filter: drop-shadow(0 .2rem .15rem rgba(13, 110, 253, 0.7)) drop-shadow(0 .4rem .65rem rgba(13, 110, 253,0.2)) drop-shadow(0 .9rem 1.15rem rgba(13, 110, 253, 0.2));
+  color: rgba(173, 230, 216, 1);
+  border-bottom: .1em solid rgba(173, 230, 216, .5);
+  filter: drop-shadow(0 .2rem .15rem rgba(173, 230, 216, 0.7)) drop-shadow(0 .4rem .65rem rgba(173, 230, 216,0.2)) drop-shadow(0 .9rem 1.15rem rgba(173, 230, 216, 0.2));
 }
 .primary-blue-button11-container {
   font-size: 1.25rem;
