@@ -4,12 +4,12 @@ exit = document.getElementById("close-menu");
 
 hmbr.addEventListener("click",function () {
   mnu.style.opacity = "1";
-  mnu.style.transition = "opacity 1180ms";
+  mnu.style.animationName =  "popin";
   mnu.style.display = "flex";
 });
 
 exit.addEventListener("click",function () {
   mnu.style.opacity = "0";
-  mnu.style.transition = "opacity 1180ms";
+  mnu.style.animationName = "popin";
   mnu.style.display = "none";
 });
