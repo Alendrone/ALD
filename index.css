@@ -4,8 +4,8 @@
   border: 0;
   text-decoration: none;
   border-radius: 15px;
-  background-color: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.4);
   backdrop-filter: blur(30px);
   color: rgba(255,255,255,0.8);
   letter-spacing: 2px;
