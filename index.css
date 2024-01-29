@@ -6,7 +6,7 @@
        opacity: 1;
      }
 }
-#mobile-menu:focus-visible {
+#mobile-menu:focus {
   animation: popin 2.09s !important;
 }
 .primary-blue-button11-container {
