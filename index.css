@@ -1,4 +1,4 @@
-@keyframes pop-in {
+@keyframes popin {
      from {
        opacity: 0;
        transform: scale(0.1);
@@ -10,6 +10,7 @@
 }
 .mobile-menu{
   transition:animation 1180ms, display 1180ms;
+  animation:popin 1180ms ease-in;
 }
 .primary-blue-button11-container {
   font-size: 1.25rem;
