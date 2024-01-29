@@ -9,5 +9,5 @@ hmbr.addEventListener("click",function () {
 
 exit.addEventListener("click",function () {
   mnu.focus();
-  mnu.addEventListener("animationend",function(){mnu.style.display = "none";},{once:true});
+  mnu.style.display = "none";
 });
