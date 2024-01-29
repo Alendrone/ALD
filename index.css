@@ -304,7 +304,6 @@
   align-items: flex-start;
   flex-direction: column;
   background-color: var(--dl-color-gray-white);
-  transition:animation 1180ms, display 1180ms;
 }
 .landing-top {
   flex: 0 0 auto;
