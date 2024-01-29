@@ -622,8 +622,22 @@
     font-family: Raleway;
     padding-top: .5rem;
   }
+  #form-status {
+    visibility:hidden;
+    touch-action:none;
+    display:none;
+    opacity:0;
+    pointer-events:none;
+  }
 }
 @media(max-width: 992px) {
+  #form-status {
+    visibility:visible;
+    touch-action:inherit;
+    display:inline;
+    opacity:1;
+    pointer-events:auto;
+  }
   .contact-container01 {
     padding: .675rem;
   }
