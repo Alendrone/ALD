@@ -6,8 +6,8 @@ mnu.style.visibility = "hidden";
 mnu.style.display = "flex";
 
 hmbr.addEventListener("click",function () {
-  mnu.style.animationName =  "popin";
-  mnu.style.transition = "animation 1180ms";
+  mnu.style.animation =  "popin 1180ms";
+  mnu.style.transition = "opacity 1180ms";
   mnu.style.visibility = "visible";
   mnu.style.opacity = "1";
   //mnu.style.display = "flex";
