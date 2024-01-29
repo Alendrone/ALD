@@ -4,10 +4,12 @@ exit = document.getElementById("close-menu");
 
 hmbr.addEventListener("click",function () {
   mnu.style.animationName =  "popin";
-  setTimeout(function() {mnu.style.display = "flex";},1180);
+  mnu.style.opacity = "1";
+  //mnu.style.display = "flex";
 });
 
 exit.addEventListener("click",function () {
   mnu.style.animationName = "popin";
-  setTimeout(function() {mnu.style.display = "none";},1180);
+  mnu.style.opacity = "0";
+  //mnu.style.display = "none";
 });
