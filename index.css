@@ -596,8 +596,7 @@
   object-position: center;
 }
 .landing-text08 {
-  top: 13rem;
-  height:108%;
+  top: 12rem;
   display: inline-flex;
   position: relative;
   flex-wrap: nowrap;
