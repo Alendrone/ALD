@@ -936,6 +936,9 @@
 }
 @media(max-width: 626px) {
   .landing-text08 {
+    top: 20rem;
+  }
+  .landing-text08 {
     font-size: 1.675rem;
     font-weight: 600;
 	padding-left:2rem;
