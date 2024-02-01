@@ -498,7 +498,7 @@
 .landing-text04 {
   top: 0px;
   width: 100vw;
-  margin: 21rem 0 0 0;
+  margin: 19rem 0 0 0;
   display: inline-flex;
   position: absolute;
   flex-wrap: wrap;
@@ -522,7 +522,7 @@
 .landing-text05 {
   top: 0px;
   width: 100vw;
-  margin: 24rem 0 0 0;
+  margin: 22rem 0 0 0;
   display: inline-flex;
   position: absolute;
   flex-wrap: wrap;
@@ -546,7 +546,7 @@
 .landing-text06 {
   top: 0px;
   width: 100vw;
-  margin: 27rem 0 0 0;
+  margin: 25rem 0 0 0;
   display: inline-flex;
   position: absolute;
   flex-wrap: wrap;
@@ -569,7 +569,7 @@
 .landing-text07 {
   top: 0px;
   width: 100vw;
-  margin: 30rem 0 0 0;
+  margin: 28rem 0 0 0;
   display: inline-flex;
   position: absolute;
   flex-wrap: wrap;
@@ -829,6 +829,7 @@
     margin-top: var(--dl-space-space-tripleunit);
   }
   .landing-text04 {
+    margin: 21rem 0 0 0;
     top: 3.75rem;
     right: 0;
     width: 100%;
@@ -839,6 +840,7 @@
     padding-left: 0;
   }
   .landing-text05 {
+    margin: 24rem 0 0 0;
     top: 3.75rem;
     right: 0;
     width: 100%;
@@ -849,6 +851,7 @@
     padding-left: 0;
   }
   .landing-text06 {
+    margin: 27rem 0 0 0;
     top: 3.75rem;
     right: 0;
     width: 100%;
@@ -859,6 +862,7 @@
     padding-left: 0;
   }
   .landing-text07 {
+    margin: 30rem 0 0 0;
     top: 3.75rem;
     right: 0;
     width: 100%;
