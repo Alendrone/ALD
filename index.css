@@ -826,6 +826,9 @@
 
 }
 @media(max-width: 912px) {
+  .landing-text08 {
+    top: 20rem;
+  }
   .landing-text04 {
     top: 3.75rem;
     right: 0;
@@ -908,9 +911,6 @@
   
 }
 @media(max-width: 767px) {
-  .landing-text08 {
-    top: 20rem;
-  }
   .landing-card {
     align-items: center;
   }
