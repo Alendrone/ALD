@@ -826,9 +826,6 @@
 
 }
 @media(max-width: 912px) {
-  .landing-text08 {
-    top: 20rem;
-  }
   .landing-text04 {
     top: 3.75rem;
     right: 0;
@@ -870,7 +867,7 @@
     padding-left: 0;
   }
   .landing-text08 {
-    top: 17.75rem;
+    top: 20rem;
     font-size: 2.25rem;
     padding-left: 3rem;
   }
