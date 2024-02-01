@@ -826,7 +826,7 @@
 }
 @media(max-width: 912px) {
   .landing-card {
-  margin-top: var(--dl-space-space-tripleunit);
+    margin-top: var(--dl-space-space-tripleunit);
   }
   .landing-text04 {
     top: 3.75rem;
