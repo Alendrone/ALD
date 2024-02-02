@@ -13,7 +13,7 @@ exit.addEventListener("click",function () {
 
 if (uri.pathname === "/contact") {
 var captcha = document.getElementById("captcha");
-hcaptcha.render({captcha,"site-key":"a3524c06-9e6e-4856-a31b-98e565f80c78"});
+hcaptcha.render("captcha",{"site-key":"a3524c06-9e6e-4856-a31b-98e565f80c78"});
 captcha.addEventListener("verified", function (e) {
   console.log("verified event", {token: e.token});
 });
