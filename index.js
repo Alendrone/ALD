@@ -4,8 +4,8 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid;
 function submission(e) {
-  e.preventDefault();
   if (rqid) e.currentTarget.submit();
+  e.preventDefault();
 }
 hmbr.addEventListener("click",function () {
   mnu.style.display = "flex";
