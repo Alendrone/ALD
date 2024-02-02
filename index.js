@@ -13,7 +13,7 @@ exit.addEventListener("click",function () {
 
 if (uri.pathname === "/contact") {
 var captcha = document.getElementById("captcha");
-captcha.render();
+captcha.render({size:"normal"});
 captcha.addEventListener("verified", function (e) {
   console.log("verified event", {token: e.token});
 });
