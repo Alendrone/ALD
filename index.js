@@ -15,7 +15,6 @@ if (uri.pathname === "/contact") {
 var captcha = document.getElementById("captcha");
 
 captcha.addEventListener("verified", function (e) {
-  document.write("confirmed!");
   console.log("verified event", {token: e.token});
 });
 captcha.addEventListener("error", function (e) {
