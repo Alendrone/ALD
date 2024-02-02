@@ -4,7 +4,7 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 function submission(e) {
-  if (rqid) e.currentTarget.submit();
+  //if (rqid) e.currentTarget.submit();
   e.preventDefault();
 }
 hmbr.addEventListener("click",function () {
