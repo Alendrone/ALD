@@ -2,7 +2,7 @@ var hmbr = document.getElementById("burger-menu"),
 mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
-rqid;
+rqid = false;
 function submission(e) {
   if (rqid) e.currentTarget.submit();
   e.preventDefault();
