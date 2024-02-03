@@ -16,10 +16,16 @@ exit.addEventListener("click",function () {
 });
 
 if (uri.pathname === "/contact") {
-var captcha = document.getElementById("captcha"),
-draw = document.getElementsByTagName("iframe");
+var captcha = document.getElementById("captcha");
 
-draw.style.width = "100% !important":
+window.addEventListener("load", function() {
+    var hcaptchaIframe = document.querySelector('iframe[src*="hcaptcha"]');
+    if(hcaptchaIframe) {
+        // Perform styling operations here
+        hcaptchaIframe.style.fontSize = "30px"; // Adjust font size as needed
+    }
+});
+
 
 captcha.addEventListener("verified", function (e) {
   rqid = e.token;
