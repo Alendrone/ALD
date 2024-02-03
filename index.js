@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
     var hcaptchaIframe = document.querySelector("iframe");
     if(hcaptchaIframe) {
         // Perform styling operations here
-        hcaptchaIframe.style.fontSize = "30px"; // Adjust font size as needed
+        hcaptchaIframe.style.fontSize = "1rem"; // Adjust font size as needed
     }
 });
 
