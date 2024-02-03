@@ -1,6 +1,6 @@
 h-captcha iframe {
   margin:0 auto;
-  width:100%;
+  width:100% !important;
 }
 #form-status {
   visibility:hidden;
