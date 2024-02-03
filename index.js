@@ -19,7 +19,7 @@ if (uri.pathname === "/contact") {
 var captcha = document.getElementById("captcha");
 
 window.addEventListener("load", function() {
-    var hcaptchaIframe = document.querySelector("iframe[src*=\"hcaptcha\"]");
+    var hcaptchaIframe = document.querySelector("iframe");
     if(hcaptchaIframe) {
         // Perform styling operations here
         hcaptchaIframe.style.fontSize = "30px"; // Adjust font size as needed
