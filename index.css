@@ -956,7 +956,14 @@
   }
 }
 @media(max-width: 479px) {
-  .landing-card {
+  h-captcha {
+   width:75%;
+   transform:scale(1.25);
+   -webkit-transform:scale(1.25);
+   transform-origin:0 0;
+   -webkit-transform-origin:0 0;
+  }
+ .landing-card {
     padding: var(--dl-space-space-unit);
   }
   .landing-image, .landing-image1, .landing-image2, .landing-image2, .landing-image3 {
