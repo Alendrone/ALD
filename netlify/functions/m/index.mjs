@@ -2,7 +2,7 @@ import {Resend} from "resend";
 
 exports.handler = async function (event, context) {
   var body = event.body,
-  resend = new Resend("re_BrHTVc4y_FL5za8s2n7bSQQDVAYEroPuK"), 
+  resend = new Resend(process.env.PASSPHRASE),
   uid = Math.floor(Date.now() / 1000).toString(),
   submit = [],
   params = body.split("&"),
