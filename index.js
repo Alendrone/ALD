@@ -16,7 +16,10 @@ exit.addEventListener("click",function () {
 });
 
 if (uri.pathname === "/contact") {
-var captcha = document.getElementById("captcha");
+var captcha = document.getElementById("captcha"),
+ctx = captcha.getContext("2d");
+
+ctx.font = "30px Arial";
 captcha.addEventListener("verified", function (e) {
   rqid = e.token;
 });
