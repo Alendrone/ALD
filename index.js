@@ -18,15 +18,6 @@ exit.addEventListener("click",function () {
 if (uri.pathname === "/contact") {
 var captcha = document.getElementById("captcha");
 
-window.addEventListener("load", function() {
-    var hcaptchaIframe = document.querySelector("iframe");
-    if(hcaptchaIframe) {
-        // Perform styling operations here
-        hcaptchaIframe.style.fontSize = "1rem !important"; // Adjust font size as needed
-    }
-});
-
-
 captcha.addEventListener("verified", function (e) {
   rqid = e.token;
 });
