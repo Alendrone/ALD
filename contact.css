@@ -1,6 +1,9 @@
 h-captcha {
   margin:0 auto;
-  scale:4rem;
+  transform:scale(2);
+  -webkit-transform:scale(2);
+  transform-origin:center;
+  -webkit-transform-origin:center;
 }
 #form-status {
   visibility:hidden;
