@@ -755,8 +755,8 @@
 @media(min-width: 1363px) {
   h-captcha {
    box-sizing:border-box;
-   transform:scale(1.75);
-   -webkit-transform:scale(1.75);
+   transform:scale(2);
+   -webkit-transform:scale(2);
    transform-origin:center;
    -webkit-transform-origin:center;
   }
