@@ -916,7 +916,6 @@
 @media(max-width: 767px) {
   h-captcha {
    box-sizing:border-box;
-   width:62.5%;
    transform:scale(1.5);
    -webkit-transform:scale(1.5);
    transform-origin:0 0;
@@ -951,7 +950,6 @@
 @media(max-width: 626px) {
   h-captcha {
    box-sizing:border-box;
-   width:62.5%;
    transform:scale(1.25);
    -webkit-transform:scale(1.25);
    transform-origin:0 0;
