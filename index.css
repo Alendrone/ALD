@@ -970,6 +970,13 @@
   }
 }
 @media(max-width: 479px) {
+ h-captcha {
+   box-sizing:border-box;
+   transform:scale(1);
+   -webkit-transform:scale(1);
+   transform-origin:center;
+   -webkit-transform-origin:center;
+  }
  .landing-card {
     padding: var(--dl-space-space-unit);
   }
