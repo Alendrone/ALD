@@ -931,7 +931,7 @@
   h-captcha {
    box-sizing:border-box;
    transform:scale(1.1275);
-   -webkit-transform:scale(1.25);
+   -webkit-transform:scale(1.1275);
    transform-origin:center;
    -webkit-transform-origin:center;
   }
