@@ -918,6 +918,7 @@
    display:block;
    align-items:center;
    justify-content:center;
+   width:100%;
    width:auto !important;
    margin-left:0 !important;
    margin-right:0 !important;
