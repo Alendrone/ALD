@@ -753,6 +753,13 @@
   border-radius: 1.5rem;
 }
 @media(max-width: 1363px) {
+  h-captcha {
+   box-sizing:border-box;
+   transform:scale(2);
+   -webkit-transform:scale(2);
+   transform-origin:center;
+   -webkit-transform-origin:center;
+  }
   .landing-card {
     margin-right: 0 auto;
   }
@@ -827,7 +834,7 @@
 @media(max-width: 912px) {
   h-captcha {
    box-sizing:border-box;
-   transform:scale(1.5);
+   transform:scale(1.375);
    -webkit-transform:scale(1.5);
    transform-origin:center;
    -webkit-transform-origin:center;
