@@ -825,6 +825,13 @@
 
 }
 @media(max-width: 912px) {
+  h-captcha {
+   box-sizing:border-box;
+   transform:scale(1.5);
+   -webkit-transform:scale(1.5);
+   transform-origin:center;
+   -webkit-transform-origin:center;
+  }
   .landing-card {
     margin-top: var(--dl-space-space-tripleunit);
   }
