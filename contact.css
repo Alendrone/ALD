@@ -1,5 +1,6 @@
 h-captcha {
   margin:0 auto;
+  scale:4rem;
 }
 #form-status {
   visibility:hidden;
