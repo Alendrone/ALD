@@ -915,7 +915,7 @@
 }
 @media(max-width: 767px) {
   h-captcha {
-   margin-left:0%;
+   margin-left:25%;
    margin-right:0%;
    box-sizing:border-box;
    transform:scale(1.5);
