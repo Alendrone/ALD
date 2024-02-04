@@ -914,6 +914,14 @@
   
 }
 @media(max-width: 767px) {
+  h-captcha {
+   box-sizing:border-box;
+   width:62.5%;
+   transform:scale(1.5);
+   -webkit-transform:scale(1.5);
+   transform-origin:0 0;
+   -webkit-transform-origin:0 0;
+  }
   .landing-card {
     align-items: center;
   }
@@ -941,6 +949,14 @@
   }
 }
 @media(max-width: 626px) {
+  h-captcha {
+   box-sizing:border-box;
+   width:62.5%;
+   transform:scale(1.25);
+   -webkit-transform:scale(1.25);
+   transform-origin:0 0;
+   -webkit-transform-origin:0 0;
+  }
   .landing-text08 {
     font-size: 1.675rem;
     font-weight: 600;
@@ -956,14 +972,6 @@
   }
 }
 @media(max-width: 479px) {
-  h-captcha {
-   box-sizing:border-box;
-   width:62.5%;
-   transform:scale(1.25);
-   -webkit-transform:scale(1.25);
-   transform-origin:0 0;
-   -webkit-transform-origin:0 0;
-  }
  .landing-card {
     padding: var(--dl-space-space-unit);
   }
