@@ -917,6 +917,7 @@
   h-captcha {
    width:auto !important;
    margin-left:auto !important;
+   margin-right:auto !important;
    box-sizing:border-box;
    transform:scale(1.5);
    -webkit-transform:scale(1.5);
