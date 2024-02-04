@@ -11,7 +11,6 @@ exports.handler = async function (event, context) {
   len,
   nth,
   cur,
-  ndx,
   rawdata;
   
  for (;i;--i) {
