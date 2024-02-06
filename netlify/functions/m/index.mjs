@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
   },
   body: `${JSON.stringify(data)}`
  }),
- response_json = JSON.parse(response.content),
+ response_json = JSON.parse(response),
  success = response_json["success"];
  try {
    await textGeneration({
