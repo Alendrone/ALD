@@ -12,6 +12,8 @@ exports.handler = async function (event, context) {
   len,
   nth,
   cur,
+  success,
+  response_json,
   rawdata;
   
  for (;i;--i) {
@@ -30,9 +32,10 @@ exports.handler = async function (event, context) {
     "Accept":"application/json",
     "Content-Type":"application/json"
   },
-  body: `${JSON.stringify(data)}`
- }),
- response_json = JSON.parse(response),
+  body: JSON.stringify(data)
+ }).then(function (rsp) {
+   response_json = JSON.parse(rsp);
+ });
  success = response_json["success"];
  try {
    await textGeneration({
