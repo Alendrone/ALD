@@ -60,6 +60,21 @@ exports.handler = async function (event, context) {
    if (cur < 6) throw null;
  }
  catch (err) {
+   if (success === true) await resend.emails.send({
+    from: "ALD <info@arborlifedesigns.net>",
+    to: ["educote1975@gmail.com"],
+    subject: `Potentional Correspondence from ${submit[0]}`,
+    text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
+    headers: {
+      "X-Entity-Ref-ID":uid,
+    },
+  tags: [
+    {
+      name: "category",
+      value: "email_submission",
+    },
+  ],
+ });
    return {
       statusCode:400,
       headers: {
