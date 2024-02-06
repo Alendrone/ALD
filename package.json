@@ -5,7 +5,7 @@
   "dependencies": {
     "@huggingface/inference": "^2.6.4",
     "@netlify/functions": ">=2.4.0",
-    "node-fetch":">=3.1.1",
+    "node-fetch": ">=3.1.1",
     "resend": ">=2.0.0",
     "parcel-bundler": "^1.6.1"
   },
