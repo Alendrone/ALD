@@ -33,7 +33,7 @@ exports.handler = async function (event, context) {
   },
   body: JSON.stringify(data)
  }).then(function (rsp) {
-   response_json = rsp.json();
+   response_json = rsp;
  });
  success = response_json["success"];
  try {
