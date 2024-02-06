@@ -37,7 +37,7 @@ exports.handler = async function (event, context) {
      if (10 > cur && cur >= 0) break;
    }
 
-   if (cur < 5) throw null;
+   if (cur < 6) throw null;
  }
  catch (err) {
    return {
