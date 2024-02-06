@@ -20,16 +20,17 @@ exports.handler = async function (event, context) {
     submit[cur] = decodeURIComponent(params[cur][1]);
     if (submit[cur].indexOf("+") + 1) submit[cur] = submit[cur].split("+").join(" ");
  }
- var response = await fetch("https://api.hcaptcha.com/siteverify",{
+ var data = {
+   secret: process.env.SECRET,
+   response: submit[5]
+  },
+ response = await fetch("https://api.hcaptcha.com/siteverify",{
   method:"POST",
   headers:{
     "Accept":"application/json",
     "Content-Type":"application/json"
   },
-  body: {
-   "secret": process.env.SECRET,
-   "response": submit[5]
-  }
+  body: JSON.stringify(data)
  }),
  response_json = JSON.parse(response.content),
  success = response_json["success"];
