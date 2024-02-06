@@ -32,8 +32,9 @@ exports.handler = async function (event, context) {
     "Content-Type":"application/json"
   },
   body: JSON.stringify(data)
- }).then(function (rsp) {
-   response_json = rsp;
+ }).then(rsp => rsp.json)
+ .then(data => {
+   response_json = data;
  });
  success = response_json["success"];
  try {
