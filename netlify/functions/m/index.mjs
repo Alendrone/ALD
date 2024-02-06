@@ -29,7 +29,6 @@ exports.handler = async function (event, context) {
  response = await fetch("https://api.hcaptcha.com/siteverify",{
   method:"POST",
   headers:{
-    "Accept":"application/json",
     "Content-Type":"application/json"
   },
   body: JSON.stringify(data)
