@@ -1,6 +1,7 @@
 import {Resend} from "resend";
 import {textGeneration} from "@huggingface/inference";
 import fetch from "node-fetch";
+import queryString from "query-string";
 
 exports.handler = async function (event, context) {
   var body = event.body,
@@ -26,12 +27,13 @@ exports.handler = async function (event, context) {
    secret: process.env.SECRET,
    response: submit[5]
   },
+ encoded = queryString.stringify(data),
  response = await fetch("https://api.hcaptcha.com/siteverify",{
   method:"POST",
   headers:{
     "Content-Type":"application/x-www-form-urlencoded"
   },
-  body: JSON.stringify(data)
+  body: encoded
  }).then(rsp => rsp.json())
  .then(dat => {
    response_json = JSON.stringify(dat);
