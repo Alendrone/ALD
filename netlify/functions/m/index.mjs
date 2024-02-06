@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
     "Accept":"application/json",
     "Content-Type":"application/json"
   },
-  body: JSON.stringify(data)
+  body: `${JSON.stringify(data)}`
  }),
  response_json = JSON.parse(response.content),
  success = response_json["success"];
