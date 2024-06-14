@@ -622,7 +622,6 @@
   background-image: url("public/external/al_designs.png");
   background-repeat: no-repeat;
   background-position: top 0 left -4vw !important;
-  filter: drop-shadow(.5rem .5rem .75rem rgba(0, 0, 0, 0.4));
 }
 
 .landing-text09 {
