@@ -234,8 +234,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   submitBtn.disabled = true;
 
   paymentElement.mount("#payment-element");
-    if (filledOut[`${e.value.type}`].isDone) submitBtn.disabled = false;
   paymentElement.on("change", (e) => {
+    if (filledOut[`${e.value.type}`].isDone) submitBtn.disabled = false;
     if (e.complete) {
       paymentMethodType = e.value.type;
       filledOut[`${e.value.type}`].isDone = true;

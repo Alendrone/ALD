@@ -1,3 +1,8 @@
+:disabled {
+  filter: grayscale(15%) invert(.1) !important; 
+  opacity: 0.6;
+  cursor: not-allowed !important; 
+}
 .primary-blue-button11-container {
   font-size: 1.25rem;
 }
