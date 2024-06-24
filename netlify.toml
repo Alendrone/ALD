@@ -3,6 +3,12 @@
  to = "https://arborlifedesigns.com/contact"
  status = 200
  force = true
+
+[[redirects]]
+ from = "https://p.arborlifedesigns.com"
+ to = "https://arborlifedesigns.com/payment"
+ status = 200
+ force = true
  
 [[redirects]]
   from = "/*"
