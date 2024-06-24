@@ -20,6 +20,7 @@ var captcha = document.getElementById("captcha");
 
 captcha.addEventListener("verified", function (e) {
   rqid = e.token;
+  if (uri.pathname === "/payment") document.getElementById("contact-button").disabled = false;
 });
 captcha.addEventListener("error", function (e) {
   rqid = false;
