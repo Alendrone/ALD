@@ -14,7 +14,7 @@
   },
   "scripts": {
     "tailwind": "tailwindcss -o style.css -c ./tailwind.config.js",
-    "build": "parcel build payment.html"
+    "build": "esbuild ./payment.js --bundle --outdir=dist --minify --sourcemap"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24",
