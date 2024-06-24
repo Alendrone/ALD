@@ -22,7 +22,7 @@ captcha.addEventListener("verified", function (e) {
   rqid = e.token;
 });
 captcha.addEventListener("error", function (e) {
-  rqid = null;
+  rqid = false;
   console.log(e.error);
 });
 }
