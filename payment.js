@@ -82,7 +82,8 @@ statumMsg = document.getElementById("payment-message");
 
 var portnumbr = "",
 paymentMethodType,
-srcURL;
+srcURL,
+filledOut = {};
 
 if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
 
@@ -232,11 +233,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   submitBtn = document.getElementById("contact-button");
 
   paymentElement.mount("#payment-element");
+    if (filledOut[`${e.value.type}`].isDone) submitBtn.disabled = false;
   paymentElement.on("change", (e) => {
     if (e.complete) {
       paymentMethodType = e.value.type;
+      filledOut[`${e.value.type}`].isDone = true;
+      submitBtn.disabled = false;
       console.log("Selected payment method type:", paymentMethodType);
-    }
+    } else filledOut[`${e.value.type}`].isDone = false;
   });
 
   form.addEventListener("submit", async (e) => {
