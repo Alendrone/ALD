@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   paymentElement = elements.create("payment",options),
   form = document.getElementById("payment-form"),
   submitBtn = document.getElementById("contact-button");
+  submitBtn.disabled = true;
 
   paymentElement.mount("#payment-element");
     if (filledOut[`${e.value.type}`].isDone) submitBtn.disabled = false;
