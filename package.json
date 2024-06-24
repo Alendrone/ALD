@@ -14,7 +14,7 @@
   },
   "scripts": {
     "tailwind": "tailwindcss -o style.css -c ./tailwind.config.js",
-    "build": "parcel build index.html payment.html contact.html"
+    "build": "parcel build payment.html"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24",
