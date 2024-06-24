@@ -234,16 +234,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   submitBtn.disabled = true;
 
   paymentElement.mount("#payment-element");
-  paymentElement.on("change", (e) => {
-    if (filledOut[`${e.value.type}`]) submitBtn.disabled = false;
-    if (e.complete) {
-      paymentMethodType = e.value.type;
-      filledOut[`${e.value.type}`].isDone = true;
-      submitBtn.disabled = false;
-      console.log("Selected payment method type:", paymentMethodType);
-    } else filledOut[`${e.value.type}`].isDone = false;
+  paymentElement.on("ready", (e) => {
+    paymentElement.on("change", (e) => {
+      if (filledOut[`${e.value.type}`]) submitBtn.disabled = false;
+      if (e.complete) {
+        paymentMethodType = e.value.type;
+        filledOut[`${e.value.type}`].isDone = true;
+        submitBtn.disabled = false;
+        console.log("Selected payment method type:", paymentMethodType);
+      } else filledOut[`${e.value.type}`].isDone = false;
+    });
   });
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     var money = document.getElementById("currency-field").value,
