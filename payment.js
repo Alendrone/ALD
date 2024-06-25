@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
   },
-  stripe = Stripe("pk_test_51N8DXiKId2VTrC5PAhE4B78FJweK5Fi117QIHrcff4NSQdTEvoRaTWHihPBvTqOuaY1s62IAJN7PCJBh6xlkO6yi00dHATiR4K",{apiVersion:"2024-04-10"}),
+  stripe = Stripe("pk_live_51PVFAM07xQtIlHl5nneheqyHshNmnrBOzRIgxXQs6GYp7cmtOWsgQnRlQYwUFez0teYb8OYUlIKi91XLMvEm4gts00iISFGmfg",{apiVersion:"2024-04-10"}),
   /*response = await axios({
       method:"POST",
       url:"/create-payment-intent",
