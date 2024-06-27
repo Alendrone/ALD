@@ -19,7 +19,8 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value;
+    var input_val = input.value,
+    computeval;
 
     // don't validate empty input
     if (input_val === "") return;
@@ -64,8 +65,10 @@ function formatCurrency(input, blur) {
         // final formatting
         if (blur === "blur") input_val += ".00";
     }
+    computeval = parseFloat(Math.round(input_val));
+    if (!computeval && input_val.length) input.value = "";
     // send updated string to input
-    input.value = input_val;
+    else input.value = input_val;
 
     // put caret back in the right position
     var updated_len = input_val.length;
