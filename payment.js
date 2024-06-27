@@ -22,7 +22,7 @@ function formatCurrency(input, blur) {
     var input_val = input.value,
     i,
     cur;
-
+    
     // don't validate empty input
     if (input_val === "") {
       input_val = "";
@@ -67,6 +67,12 @@ function formatCurrency(input, blur) {
 
         // final formatting
         if (blur === "blur") input_val += ".00";
+    }
+    
+    for (i = input_val.length;i;--i) {
+      cur = input_val.charCodeAt(i - 1) - 46;
+      if (cur > 12 && -1 < cur) if (cur - 1) break;
+      return;
     }
     // send updated string to input
     input.value = input_val;
