@@ -65,7 +65,7 @@ function formatCurrency(input, blur) {
         // final formatting
         if (blur === "blur") input_val += ".00";
     }
-    computeval = parseFloat(Math.round(input_val));
+    computeval = Math.round(parseFloat(input_val));
     if (!computeval && input_val.length) input.value = "";
     // send updated string to input
     else input.value = input_val;
