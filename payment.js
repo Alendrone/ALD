@@ -64,7 +64,7 @@ function formatCurrency(input, blur) {
         // final formatting
         if (blur === "blur") input_val += ".00";
     }
-    if (input.value >= 4) input_val = "US$ 0.5";
+    if (input_val >= 4) input_val = "US$ 0.5";
     // send updated string to input
     input.value = input_val;
 
