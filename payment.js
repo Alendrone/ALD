@@ -63,12 +63,13 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
 
         // final formatting
-        if (blur === "blur") input_val += ".00";
+        if (blur === "blur") { input_val += ".00";
+        computeval = Math.round(parseFloat(input_val));
+        if (!computeval) input_val = "US$ 0.5";
+        }
     }
 
     // send updated string to input
-    computeval = Math.round(parseFloat(input_val));
-    if (!computeval) input_val = "US$ 0.5";
     input.value = input_val;
 
     // put caret back in the right position
