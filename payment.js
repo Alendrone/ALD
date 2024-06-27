@@ -19,8 +19,7 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value,
-    computeval;
+    var input_val = input.value;
 
     // don't validate empty input
     if (input_val === "") return;
