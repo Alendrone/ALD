@@ -23,7 +23,7 @@ function formatCurrency(input, blur) {
     computeval;
 
     // don't validate empty input
-    if (input_val.trimStart() === "") return;
+    if (input_val === "") return;
 
     // original length
     var original_len = input_val.length,
@@ -65,8 +65,6 @@ function formatCurrency(input, blur) {
         // final formatting
         if (blur === "blur") input_val += ".00";
     }
-    computeval = Math.round(parseFloat(input_val));
-    if (computeval === 0) input_val = "US$ 0.5";
     // send updated string to input
     input.value = input_val;
 
