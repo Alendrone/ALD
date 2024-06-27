@@ -21,13 +21,25 @@ function formatCurrency(input, blur) {
     // get input value
     var input_val = input.value,
     i,
-    cur;
+    cur,
+    mon = input_val.indexOf("US$ ");
+    if (!mon) ++mon;
+    
+
+    const usd = input_val.substring(mon*4).split(",").join("");
     
     // don't validate empty input
     if (input_val === "") {
       input_val = "";
       return;
     }
+    
+    for (i = usd.length;i;--i) {
+      cur = usd.charCodeAt(i - 1) - 46;
+      if (cur > 12 && -1 < cur) if (cur - 1) break;
+      return;
+    }
+    
     // original length
     var original_len = input_val.length,
     // initial caret position 
@@ -67,12 +79,6 @@ function formatCurrency(input, blur) {
 
         // final formatting
         if (blur === "blur") input_val += ".00";
-    }
-    
-    for (i = input_val.length;i;--i) {
-      cur = input_val.charCodeAt(i - 1) - 46;
-      if (cur > 12 && -1 < cur) if (cur - 1) break;
-      return;
     }
     // send updated string to input
     input.value = input_val;
