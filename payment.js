@@ -24,9 +24,8 @@ function formatCurrency(input, blur) {
     cur;
 
     // don't validate empty input
-    for (i = input_val.length;i;--i) {
-      cur = input_val.charCodeAt(i - 1) - 46;
-      if (cur > 12 && -1 < cur) if (cur - 1) break;
+    if (input_val === "") {
+      input_val = "";
       return;
     }
     // original length
