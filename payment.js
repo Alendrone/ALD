@@ -63,12 +63,10 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
 
         // final formatting
-        if (blur === "blur") { input_val += ".00";
-        computeval = Math.round(parseFloat(input_val));
-        if (!computeval) input_val = "US$ 0.5";
-        }
+        if (blur === "blur") input_val += ".00";
     }
-
+    computeval = Math.round(parseFloat(input_val));
+    if (computeval === 0) input_val = "US$ 0.5";
     // send updated string to input
     input.value = input_val;
 
