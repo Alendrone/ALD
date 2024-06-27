@@ -19,12 +19,17 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value;
+    var input_val = input.value,
+    i,
+    cur;
 
     // don't validate empty input
-    if (input_val.trimStart() === "") {
-      input.value = "";
-      return;
+    for (i = input_val.length;i;--i) {
+      cur = input_val.charCodeAt(i - 1);
+      if ((cur - 46) > 12 && cur != 47) {
+        input.value = "";
+        return;
+      }
     }
     // original length
     var original_len = input_val.length,
