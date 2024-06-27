@@ -19,10 +19,11 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value;
+    var input_val = input.value,
+    computeval;
 
     // don't validate empty input
-    if (input_val === "") return;
+    if (input_val.trimStart() === "") return;
 
     // original length
     var original_len = input_val.length,
@@ -66,6 +67,8 @@ function formatCurrency(input, blur) {
     }
 
     // send updated string to input
+    computeval = Math.round(parseFloat(input_val));
+    if (!computeval) input_val = "US$ 0.5";
     input.value = input_val;
 
     // put caret back in the right position
@@ -246,8 +249,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     var money = document.getElementById("currency-field").value,
-    bal = money.indexOf("US$ "); 
+    email = document.getElementById("email-address").value,
+    bal = money.indexOf("US$ "),
+    usrname = encodeURIComponent(email.split("@")[0]);
     if (!bal) ++bal;
+    
 
      const formatted = money.substring(bal*4).split(",").join("");
 
@@ -265,7 +271,7 @@ document.addEventListener("DOMContentLoaded", async () => {
    const {error, confirmationToken} = await stripe.createConfirmationToken({
       elements,
       params: {
-        return_url: srcURL,
+        return_url: `${srcURL}/transaction?username=${usrname}`,
     payment_method_data: {
           billing_details: {
             email:"info@arborlifedesigns.net",
