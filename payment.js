@@ -22,7 +22,7 @@ function formatCurrency(input, blur) {
     var input_val = input.value;
 
     // don't validate empty input
-    if (input_val.trim() === "") {
+    if (input_val.trimStart() === "") {
       input.value = "";
       return;
     }
