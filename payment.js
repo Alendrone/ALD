@@ -328,7 +328,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (statusMsg !== "succeeded") document.getElementById("payment-message").textContent = `Something is amiss.  Payment has a ${statusMsg} status code.`;
     else document.getElementById("payment-message").textContent = "Payment successful!";*/
-
+  let totaldue = Math.round((parseFloat(formatted) * 100));
+  //if (!totaldue) totaldue = 50;
   const res = await axios({
         method:"POST",
         url:"/create-confirm-intent",
@@ -338,7 +339,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           "Accept": Dfaults[NDX],
           "Accept-Language": "en-US,en;q=0.9",
         },
-        data:{confirmationTokenId: confirmationToken.id, amount: Math.round((parseFloat(formatted) * 100))},
+        data:{confirmationTokenId: confirmationToken.id, amount: totaldue},
         responseType:"json",
         responseEncoding:"utf8"
     });
