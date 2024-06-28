@@ -80,11 +80,11 @@ function formatCurrency(input, blur) {
       if (cur > 12 && -1 < cur) if (cur - 1) break;
       return;
     }*/
-    if (blur === "blur") product = calculateGrossAmount(parseFloat(input_val));
+    if (blur === "blur") product = calculateGrossAmount(parseFloat(input_val.substring(4)));
     
    /// input_val = product.string;
     // send updated string to input
-    input.value = input_val;
+    input.value = "US$ " + product.toString();
     // put caret back in the right position
     var updated_len = input_val.length;
     caret_pos = updated_len - original_len + caret_pos;
