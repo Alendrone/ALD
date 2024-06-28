@@ -15,6 +15,9 @@ document.querySelectorAll("input[data-type='currency']").forEach(input => {
     });
     input.addEventListener('blur', function() {
         formatCurrency(this, "blur");
+        const newval = parseFloat(this.value.substring(4)),
+       gross = calculateGrossAmount(newval):
+        if (newval !== gross) this.input = "USA " + gross.toString():
     });
 });
 
