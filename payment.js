@@ -2,6 +2,7 @@ import axios from "axios";
 
 function calculateGrossAmount(netAmount) {
   // Define Stripe fee structure
+  if (!netAmount) netAmount = .5;
   const percent = 2.9,
   fixed = 0.30,
   grossAmount = (netAmount + fixed) / (1 - percent / 100);
