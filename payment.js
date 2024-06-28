@@ -80,7 +80,7 @@ function formatCurrency(input, blur) {
       if (cur > 12 && -1 < cur) if (cur - 1) break;
       return;
     }*/
-    product = calculateGrossAmount(parseFloat(input_val.substring(4)));
+    if (blur === "blur") product = calculateGrossAmount(parseFloat(input_val.substring(4)));
     
    /// input_val = product.string;
     // send updated string to input
