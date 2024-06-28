@@ -77,7 +77,7 @@ function formatCurrency(input, blur) {
     }
     if (blur === "blur") {
     var newVal = parseFloat(input_val.substring(4)),
-    grossNew = calculateGrossAmount(newval);
+    grossNew = calculateGrossAmount(newVal);
     if (oldGross !== newVal) input_val = "US$ " + gross.toString();
     oldGross = grossNew;
     }
