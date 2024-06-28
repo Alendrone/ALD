@@ -17,7 +17,7 @@ document.querySelectorAll("input[data-type='currency']").forEach(input => {
         formatCurrency(this, "blur");
         const newval = parseFloat(this.value.substring(4)),
        gross = calculateGrossAmount(newval):
-        if (newval !== gross) this.value = "USA " + gross.toString():
+        if (newval !== gross) this.value = "US$ " + gross.toString():
     });
 });
 
