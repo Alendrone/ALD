@@ -1,5 +1,13 @@
 import axios from "axios";
 
+function calculateGrossAmount(netAmount) {
+  // Define Stripe fee structure
+  const percent = 2.9,
+  fixed = 0.30,
+  grossAmount = (netAmount + fixed) / (1 - percent / 100);
+  return Math.round(grossAmount * 100) / 100; // Round to 2 decimal places
+}
+
 document.querySelectorAll("input[data-type='currency']").forEach(input => {
     input.addEventListener('keyup', function() {
         formatCurrency(this);
@@ -61,7 +69,7 @@ function formatCurrency(input, blur) {
         // remove all non-digits
         input_val = formatNumber(input_val);
         input_val = "US$ " + input_val;
-
+        
         // final formatting
         if (blur === "blur" && input_val.length === 4) input_val += "00.50";
         else if (blur === "blur") input_val += ".00";
