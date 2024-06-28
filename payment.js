@@ -83,7 +83,7 @@ function formatCurrency(input, blur) {
     }*/
     if (blur === "blur") product = calculateGrossAmount(parseFloat(input_val.substring(4)));
     // send updated string to input
-    input.value = product.toString();
+    input.value = "US$ " + product.toString();
     // put caret back in the right position
     var updated_len = input_val.length;
     caret_pos = updated_len - original_len + caret_pos;
