@@ -76,6 +76,11 @@ function formatCurrency(input, blur) {
         if (blur === "blur" && input_val.length === 4) input_val += "0.50";
         else if (blur === "blur") input_val += ".00";
     }
+    if (blur === "blur") {
+    let newval = parseFloat(this.value.substring(4)),
+    gross = calculateGrossAmount(newval);
+    if (newval != gross) this.value = "US$ " + gross.toString():
+    }
     /*for (i = usd.length;i;--i) {
       cur = usd.charCodeAt(i - 1) - 46;
       if (cur > 12 && -1 < cur) if (cur - 1) break;
