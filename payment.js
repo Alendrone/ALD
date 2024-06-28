@@ -19,14 +19,7 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value,
-    i,
-    cur,
-    mon = input_val.indexOf("US$ ");
-    if (!mon) ++mon;
-    
-
-    const usd = input_val.substring(mon*4).split(",").join("");
+    var input_val = input.value;
     
     // don't validate empty input
     if (input_val === "") return;
@@ -70,13 +63,13 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
 
         // final formatting
-        if (blur === "blur") input_val += ".00";
+        if (blur === "blur") input_val += ".50";
     }
-    for (i = usd.length;i;--i) {
+    /*for (i = usd.length;i;--i) {
       cur = usd.charCodeAt(i - 1) - 46;
       if (cur > 12 && -1 < cur) if (cur - 1) break;
       return;
-    }
+    }*/
     // send updated string to input
     input.value = input_val;
 
