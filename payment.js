@@ -71,7 +71,7 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
         
         // final formatting
-        if (blur === "blur" && input_val.length === 4) input_val += "00.50";
+        if (blur === "blur" && input_val.length === 4) input_val += "0.50";
         else if (blur === "blur") input_val += ".00";
     }
     /*for (i = usd.length;i;--i) {
@@ -79,9 +79,9 @@ function formatCurrency(input, blur) {
       if (cur > 12 && -1 < cur) if (cur - 1) break;
       return;
     }*/
+    if () calculateGrossAmount(parseFloat(input_val));
     // send updated string to input
     input.value = input_val;
-
     // put caret back in the right position
     var updated_len = input_val.length;
     caret_pos = updated_len - original_len + caret_pos;
