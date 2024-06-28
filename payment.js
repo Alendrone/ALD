@@ -63,7 +63,8 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
 
         // final formatting
-        if (blur === "blur") input_val += ".50";
+        if (blur === "blur" && input_val.length > 5) input_val += "0.50";
+        else input_val += ".00";
     }
     /*for (i = usd.length;i;--i) {
       cur = usd.charCodeAt(i - 1) - 46;
