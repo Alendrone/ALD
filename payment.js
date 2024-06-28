@@ -79,7 +79,7 @@ function formatCurrency(input, blur) {
     if (blur === "blur") {
     let newval = parseFloat(this.value.substring(4)),
     gross = calculateGrossAmount(newval);
-    if (newval != gross) this.value = "US$ " + gross.toString():
+    if (newval !== gross) this.value = "US$ " + gross.toString():
     }
     /*for (i = usd.length;i;--i) {
       cur = usd.charCodeAt(i - 1) - 46;
