@@ -29,7 +29,7 @@ function formatCurrency(input, blur) {
 
     // get input value
     var input_val = input.value,
-    newVal = parseFloat(input_val.substring(4));
+    newVal = parseFloat(input_val.substring(4)),
     grossNew = calculateGrossAmount(newVal);
     
     // don't validate empty input
