@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           "Accept": Dfaults[NDX],
           "Accept-Language": "en-US,en;q=0.9",
         },
-        data:{confirmationTokenId: confirmationToken.id, amount: totaldue},
+        data:{confirmationTokenId: confirmationToken.id, amount: totaldue, customer_email: email},
         responseType:"json",
         responseEncoding:"utf8"
     });
