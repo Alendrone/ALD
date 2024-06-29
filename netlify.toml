@@ -1,8 +1,8 @@
 [[redirects]]
- from = "https://m.arborlifedesigns.com"
- to = "https://arborlifedesigns.com/contact"
- status = 200
- force = true
+from = "https://m.arborlifedesigns.com/*"
+to = "https://arborlifedesigns.com/contact/:splat"
+status = 301
+force = true
 
 [[redirects]]
 from = "https://p.arborlifedesigns.com/*"
