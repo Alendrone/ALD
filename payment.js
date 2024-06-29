@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", async () => {
    const {error, confirmationToken} = await stripe.createConfirmationToken({
       elements,
       params: {
-        return_url: `${srcURL}/transaction?username=${usrname}`,
+        return_url: `${srcURL}/?username=${usrname}`,
     payment_method_data: {
           billing_details: {
             email:"info@arborlifedesigns.net",
