@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
   const { payment_intent_client_secret, username } = event.queryStringParameters;
 
   try {
-    const paymentIntent = await stripe.paymentIntents.retrieve(client_secret);
+    const paymentIntent = await stripe.paymentIntents.retrieve(payment_intent_client_secret);
 
     let status,
     respCode;
