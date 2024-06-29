@@ -3,10 +3,10 @@ import Stripe from "stripe";
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY,{apiVersion:"2024-06-20"});
 
 exports.handler = async (event, context) => {
-  const { payment_intent_client_secret, username } = event.queryStringParameters;
+  const { payment_intent, username } = event.queryStringParameters;
 
   try {
-    const paymentIntent = await stripe.paymentIntents.retrieve(payment_intent_client_secret);
+    const paymentIntent = await stripe.paymentIntents.retrieve(payment_intent);
 
     let status,
     respCode;
