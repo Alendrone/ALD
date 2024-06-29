@@ -123,7 +123,7 @@ if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
 
 srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 
-srcURL = window.location.protocol + stripSubdomain(srcURL);
+srcURL = "https://" + stripSubdomain(srcURL);
 
 /*async function updatePaymentIntent(paymentIntentId, newAmount, confirmToken) {
   try {
