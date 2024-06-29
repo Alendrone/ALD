@@ -7,9 +7,10 @@ exports.handler = async function (event, context) {
   if (event.httpMethod !== "POST") return {statusCode:405,body:JSON.stringify({error:"Method Not Allowed"})};
 
   try {
-    const {confirmationTokenId, amount} = JSON.parse(event.body);
+    const {confirmationTokenId, amount, customer_email} = JSON.parse(event.body);
 
     const intent = await stripe.paymentIntents.create({
+      receipt_email: customer_email,
       confirm: true,
       amount: amount,
       currency: "usd",
