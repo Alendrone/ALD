@@ -1,3 +1,11 @@
+@keyframes rt {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
 .spinner {
 opacity:1;
 width:1em;
@@ -9,14 +17,6 @@ border-style:solid;
 border-width:0 -1 1.5em 1.5em;
 border-color:transparent transparent #FFC transparent;
 animation:rt 700ms forwards infinite;
-}
-@keyframes rt {
-0% {
-transform: rotate(0deg);
-}
-100% {
-transform: rotate(360deg);
-}
 }
 
 h-captcha {
