@@ -1,5 +1,15 @@
 import axios from "axios";
 
+function stripSubdomain (url) {
+  var urlParts = new URL(url).hostname.split("."),
+  cutoff;
+  
+  if (urlParts.length === 4) cutoff = 3;
+  else cutoff = 2;
+  
+  return urlParts.slice(0).slice(-cutoff).join(".");
+}
+
 function calculateGrossAmount(netAmount) {
   // Define Stripe fee structure
   if (!netAmount) netAmount = .5;
@@ -112,6 +122,8 @@ oldGross;
 if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
 
 srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
+
+srcURL = window.location.protocol + stripSubdomain(srcURL);
 
 /*async function updatePaymentIntent(paymentIntentId, newAmount, confirmToken) {
   try {
