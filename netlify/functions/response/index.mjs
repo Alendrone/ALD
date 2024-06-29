@@ -1,7 +1,7 @@
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY,{apiVersion:"2024-06-20"});
 
 exports.handler = async (event, context) => {
-  const {client_secret, username} = event.queryStringParameters;
+  const { client_secret, username } = event.queryStringParameters;
 
   try {
     const paymentIntent = await stripe.paymentIntents.retrieve(client_secret);
