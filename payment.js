@@ -26,7 +26,8 @@ function formatNumber(n) {
 function formatCurrency(input, blur) {
     // appends $ to value, validates decimal side
     // and puts cursor back in right position.
-
+    // don't validate empty input
+    if (input_val === "") return;
     // get input value
     var input_val = input.value,
     newVal = parseFloat(input_val.substring(4)),
@@ -38,9 +39,6 @@ function formatCurrency(input, blur) {
     }
     else return;
     }
-    
-    // don't validate empty input
-    if (input_val === "") return;
     
     
     // original length
