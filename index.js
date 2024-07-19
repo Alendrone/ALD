@@ -23,7 +23,7 @@ function submission(e) {
         headers: {
           "Content-Type": "application/json"
         },
-        data:{email: email},
+        data:{email: mail.value},
         responseType:"json",
         responseEncoding:"utf8"
     });
