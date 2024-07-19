@@ -2,7 +2,6 @@ import axios from "axios";
 var hmbr = document.getElementById("burger-menu"),
 mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
-mail = document.getElementById("email-address"),
 uri = new URL(window.location.href),
 portnumbr = "",
 srcURL,
@@ -15,7 +14,8 @@ srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/payment") {
-    var subscribed = document.getElementById("mailchimp").checked;
+    var subscribed = document.getElementById("mailchimp").checked,
+    mail = document.getElementById("email-address").value;
     if (subscribed) await axios({
         method:"POST",
         url:"/subscribe",
