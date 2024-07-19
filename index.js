@@ -1,10 +1,33 @@
+import axios from "axios";
 var hmbr = document.getElementById("burger-menu"),
 mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
+email = document.getElementById("email-address"),
 uri = new URL(window.location.href),
+portnumbr = "",
+srcURL,
 rqid = false;
+
+if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
+
+srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
+
 function submission(e) {
   e.preventDefault();
+  if (uri.pathname === "/payment") {
+    var subscribed = document.getElementById("mailchimp").checked;
+    if (subscribed) await axios({
+        method:"POST",
+        url:"/subscribe",
+        baseURL:srcURL,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data:{email: email},
+        responseType:"json",
+        responseEncoding:"utf8"
+    });
+  }
   if (rqid) e.currentTarget.submit();
 }
 hmbr.addEventListener("click",function () {
