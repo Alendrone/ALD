@@ -2,7 +2,7 @@ import axios from "axios";
 var hmbr = document.getElementById("burger-menu"),
 mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
-email = document.getElementById("email-address"),
+mail = document.getElementById("email-address"),
 uri = new URL(window.location.href),
 portnumbr = "",
 srcURL,
