@@ -1,6 +1,7 @@
 import axios from "axios"
 
 exports.handler = async function (event, context) {
+  try {
   const { email } = event.body,
   enroll = {
     members: [
@@ -16,4 +17,20 @@ exports.handler = async function (event, context) {
       Authorization: `apikey ${process.env.MAILCHIMP_KEY}`
     }
   });
+  return {
+      statusCode:200,
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body:`Succeeded with a status code of ${status}`
+  };
+  catch (err) {
+    return {
+      statusCode:400,
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body:`Failed with a error of ${err}`
+  };
+  }
 };
