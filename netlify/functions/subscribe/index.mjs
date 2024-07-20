@@ -1,8 +1,9 @@
 import axios from "axios";
 
 exports.handler = async function (event, context) {
-  const { email } = event.body,
-  {status} = await axios({
+  try {
+  const { email } = event.body;
+  await axios({
     method:"POST",
     url:`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`,
     headers: {
@@ -14,8 +15,6 @@ exports.handler = async function (event, context) {
     responseEncoding:"utf8"
   });
   
-  
-  if (status) {
     return {
       statusCode:200,
       headers: {
@@ -24,7 +23,7 @@ exports.handler = async function (event, context) {
       body:`Succeeded!`
     };
   }
-  /*catch (err) {
+  catch (err) {
     return {
       statusCode:400,
       headers: {
@@ -32,5 +31,5 @@ exports.handler = async function (event, context) {
       },
       body:`Failed with a error of ${err}`
     };
-  }*/
+  }
 };
