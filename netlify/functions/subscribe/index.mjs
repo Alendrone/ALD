@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
     
     await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, enroll, {
       headers: {
-        Authorization: `apikey ${process.env.MAILCHIMP_KEY}`
+        Authorization: `Basic ${process.env.MAILCHIMP_KEY}`
       }
     });
     return {
