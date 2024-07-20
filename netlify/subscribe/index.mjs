@@ -24,7 +24,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Content-Type": "text/plain"
       },
-      body:`Failed with a error of ${err}`
+      body:`Failed with a error of ${res}`
     };
   }
 };
