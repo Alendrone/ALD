@@ -8,12 +8,12 @@ rqid = false;
 async function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
-    var subscribed = document.getElementById("mailchimp").checked,
-    mail = document.getElementById("emailaddress").value,
+    var subscribe = document.getElementById("mailchimp"),
+    mail = document.getElementById("emailaddress"),
     query = new URLSearchParams({
-      email: mail
+      email: mail.value
     });
-    if (subscribed) await axios({
+    if (subscribe.checked) await axios({
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
