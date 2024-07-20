@@ -24,6 +24,7 @@ exports.handler = async function (event, context) {
       },
       body:`Succeeded with a status code of ${status}`
   };
+  }
   catch (err) {
     return {
       statusCode:400,
