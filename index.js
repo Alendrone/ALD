@@ -11,7 +11,7 @@ if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
 
 srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 
-function submission(e) {
+async function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
