@@ -18,7 +18,7 @@ exports.handler = async function (event, context) {
     responseType:"json",
     responseEncoding:"utf8"
   });
-  
+  if (status === 200) {
     return {
       statusCode:200,
       headers: {
@@ -26,6 +26,7 @@ exports.handler = async function (event, context) {
       },
       body:`Succeeded! ${status}`
     };
+  } else throw null;
   }
   catch (err) {
     return {
