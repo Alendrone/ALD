@@ -12,17 +12,12 @@ async function submission(e) {
     mail = document.getElementById("email-address").value,
     params = new URLSearchParams({
       email: mail
-    });
+    }).toString();
     if (subscribed) await axios({
         method:"POST",
-        url:"/subscribe",
+        url:`/subscribe?${params}`,
         baseURL:"https://arborlifedesigns.com",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data:params,
-        responseType:"json",
-        responseEncoding:"utf8"
+        data:{}
     });
   }
   if (rqid) e.currentTarget.submit();
