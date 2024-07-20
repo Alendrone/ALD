@@ -16,8 +16,7 @@ async function submission(e) {
     if (subscribed) await axios({
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
-        params:query,
-        data:{}
+        params:query
     });
   }
   if (rqid) e.currentTarget.submit();
