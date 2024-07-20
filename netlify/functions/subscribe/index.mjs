@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
         }
         ]
     },
-    encoded = btoa(process.env.LIST_ID);
+    encoded = btoa(process.env.MAILCHIMP_KEY);
     
     await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, enroll, {
       headers: {
