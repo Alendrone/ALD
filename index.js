@@ -18,7 +18,7 @@ async function submission(e) {
         url:"/subscribe" + mail,
         baseURL:"https://arborlifedesigns.com",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         data:{},
         responseType:"json",
