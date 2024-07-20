@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
   
-  await axios({
+  const {status} = await axios({
     method:"POST",
     url:`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`,
     headers: {
@@ -24,7 +24,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Content-Type": "text/plain"
       },
-      body:`Succeeded! ${email}`
+      body:`Succeeded! ${status}`
     };
   }
   catch (err) {
