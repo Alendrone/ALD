@@ -8,7 +8,7 @@ rqid = false;
 async function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
-    var subscribe = document.getElementById("mailchimp"),
+    /*var subscribe = document.getElementById("mailchimp"),
     mail = formdata.get("email"),
     query = new URLSearchParams({
       email: mail
@@ -17,7 +17,7 @@ async function submission(e) {
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
-    });
+    });*/
   }
   if (rqid) e.currentTarget.submit();
 }
