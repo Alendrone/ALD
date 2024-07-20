@@ -17,7 +17,7 @@ async function submission(e) {
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query,
-        data:{},
+        data:{}
     });
   }
   if (rqid) e.currentTarget.submit();
