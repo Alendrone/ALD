@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
         ]
     };
     
-    const { status } = await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, enroll, {
+    await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, enroll, {
       headers: {
         Authorization: `apikey ${process.env.MAILCHIMP_KEY}`
       }
@@ -22,7 +22,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Content-Type": "text/plain"
       },
-      body:`Succeeded with a status code of ${status}`
+      body:`Succeeded!`
     };
   }
   catch (err) {
