@@ -10,13 +10,14 @@ async function submission(e) {
   if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
     mail = document.getElementById("email-address").value,
-    params = new URLSearchParams({
+    query = new URLSearchParams({
       email: mail
-    }).toString();
+    });
     if (subscribed) await axios({
         method:"POST",
-        url:`https://arborlifedesigns.com/subscribe?${params}`,
-        data:{}
+        url:`https://arborlifedesigns.com/subscribe`,
+        params:query,
+        data:{},
     });
   }
   if (rqid) e.currentTarget.submit();
