@@ -19,7 +19,7 @@ async function submission(e) {
     if (subscribed) await axios({
         method:"POST",
         url:"/subscribe",
-        baseURL:srcURL,
+        baseURL:"https://arborlifedesigns.com",
         headers: {
           "Content-Type": "application/json"
         },
