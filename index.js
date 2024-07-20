@@ -4,21 +4,18 @@ mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
-var portnumbr = "",
-srcURL;
-
-if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
-
-srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 
 async function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
-    mail = document.getElementById("email-address").value;
+    mail = document.getElementById("email-address").value,
+    params = new URLSearchParams({
+      email: mail
+    }).toString();
     if (subscribed) await axios({
         method:"POST",
-        url:"/subscribe",
+        url:"/subscribe" + mail,
         baseURL:"https://arborlifedesigns.com",
         headers: {
           "Content-Type": "application/json"
