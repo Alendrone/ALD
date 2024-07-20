@@ -2,7 +2,7 @@ import axios from "axios";
 
 exports.handler = async function (event, context) {
   try {
-  const { email } = event.queryStringParams;
+  const { email } = event.queryStringParameters;
   
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
