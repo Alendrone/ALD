@@ -4,6 +4,12 @@ mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
+var portnumbr = "",
+srcURL;
+
+if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
+
+srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 
 function submission(e) {
   e.preventDefault();
