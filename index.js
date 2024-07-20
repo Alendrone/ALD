@@ -15,8 +15,7 @@ async function submission(e) {
     }).toString();
     if (subscribed) await axios({
         method:"POST",
-        url:`/subscribe?${params}`,
-        baseURL:"https://arborlifedesigns.com",
+        url:`https://arborlifedesigns.com/subscribe?${params}`,
         data:{}
     });
   }
