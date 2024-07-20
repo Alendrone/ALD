@@ -13,7 +13,7 @@ srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
 
 async function submission(e) {
   e.preventDefault();
-  if (uri.pathname === "/payment") {
+  if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
     mail = document.getElementById("email-address").value;
     if (subscribed) await axios({
