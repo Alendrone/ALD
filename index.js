@@ -20,7 +20,7 @@ async function submission(e) {
         headers: {
           "Content-Type": "application/json"
         },
-        data:{email:mail},
+        data:{},
         responseType:"json",
         responseEncoding:"utf8"
     });
