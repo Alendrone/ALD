@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
       "Content-Type": "application/json",
       "Authorization": `apikey ${process.env.MAILCHIMP_KEY}`
     },
-    data:,
+    data:jsonData,
     responseType:"json",
     responseEncoding:"utf8"
   });
