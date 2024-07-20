@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
   
-  /*await axios({
+  await axios({
     method:"POST",
     url:`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`,
     headers: {
@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
     data:,
     responseType:"json",
     responseEncoding:"utf8"
-  });*/
+  });
   
     return {
       statusCode:200,
