@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
       headers: {
         "Content-Type": "text/plain"
       },
-      body:`Succeeded!`
+      body:`Succeeded! ${JSON.stringify(json)}`
     };
   }
   catch (err) {
