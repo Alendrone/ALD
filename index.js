@@ -6,7 +6,7 @@ rqid = false;
 
 function submission(e) {
   e.preventDefault();
-  /*if (uri.pathname === "/contact") {
+  if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
     mail = document.getElementById("email-address").value;
     if (subscribed) await axios({
@@ -20,7 +20,7 @@ function submission(e) {
         responseType:"json",
         responseEncoding:"utf8"
     });
-  }*/
+  }
   if (rqid) e.currentTarget.submit();
 }
 hmbr.addEventListener("click",function () {
