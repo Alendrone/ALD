@@ -3,8 +3,8 @@ import axios from "axios";
 exports.handler = async function (event, context) {
   try {
     const { email } = event.body,
-    enroll = {"members": [{"email_address": email,"status": "subscribed"}]},
-    res = await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, JSON.stringify(enroll), {
+    enroll = {"members": [{"email_address": encodeURIComponent(email),"status": "subscribed"}]},
+    res = await axios.post(`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`, enroll, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.MAILCHIMP_KEY}`
