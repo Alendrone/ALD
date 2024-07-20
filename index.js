@@ -9,7 +9,7 @@ async function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
-    mail = document.getElementById("email-address").value,
+    mail = document.getElementById("emailaddress").value,
     query = new URLSearchParams({
       email: mail
     });
