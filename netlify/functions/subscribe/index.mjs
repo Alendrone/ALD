@@ -4,7 +4,8 @@ exports.handler = async function (event, context) {
   try {
   const { email } = event.body;
   
-  const json = {"members": [{"email_address": email,"status": "subscribed"}]};
+  const json = {"members": [{"email_address": email,"status": "subscribed"}]},
+  const jsonData = JSON.stringify(json);
   
   /*await axios({
     method:"POST",
