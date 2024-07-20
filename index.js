@@ -1,4 +1,3 @@
-import axios from "axios";
 var hmbr = document.getElementById("burger-menu"),
 mnu = document.getElementById("mobile-menu"),
 exit = document.getElementById("close-menu"),
