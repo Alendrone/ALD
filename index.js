@@ -15,7 +15,7 @@ async function submission(e) {
     query = new URLSearchParams({
       email: mail
     });
-    if (subscribe.checked) await axios({
+    await axios({
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
