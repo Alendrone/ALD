@@ -5,7 +5,7 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 
-async function submission(e) {
+function submission(e) {
   e.preventDefault();
   /*if (uri.pathname === "/contact") {
     var subscribed = document.getElementById("mailchimp").checked,
