@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
     url:`https://us4.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}`,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.MAILCHIMP_KEY}`
+      "Authorization": `apikey ${process.env.MAILCHIMP_KEY}`
     },
     data:,
     responseType:"json",
