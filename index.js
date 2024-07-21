@@ -7,12 +7,11 @@ rqid = false;
 
 async function submission(e) {
   e.preventDefault();
-  var formdata = new FormData(this);
   if (uri.pathname === "/contact") {
     var subscribe = document.getElementById("mailchimp"),
-    mail = formdata.get("email"),
+    mail = document.getElementById("emailaddress"),
     query = new URLSearchParams({
-      email: mail
+      email: mail.value
     });
     await axios({
         method:"POST",
