@@ -7,9 +7,9 @@ rqid = false;
 
 async function subscribe() {
   var checkbox = document.getElementById("mailchimp"),
-  mail = document.getElementById("emailaddress"),
+  mail = document.getElementById("emailaddress").value,
   query = new URLSearchParams({
-      email: mail.value
+      email: mail
   });
   await axios({
       method:"POST",
