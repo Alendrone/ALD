@@ -18,6 +18,7 @@ async function submission(e) {
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
     });
+    return;
   }
   if (rqid) e.currentTarget.submit();
 }
