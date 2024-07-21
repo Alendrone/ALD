@@ -5,20 +5,23 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 
+async function subscribe() {
+  var subscribe = document.getElementById("mailchimp"),
+  mail = document.getElementById("emailaddress"),
+  query = new URLSearchParams({
+      email: mail.value
+  });
+  axios({
+      method:"POST",
+      url:`https://arborlifedesigns.com/subscribe`,
+      params:query
+  });
+}
+
 function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
-    var subscribe = document.getElementById("mailchimp"),
-    mail = document.getElementById("emailaddress"),
-    query = new URLSearchParams({
-      email: mail.value
-    });
-    return;
-    axios({
-        method:"POST",
-        url:`https://arborlifedesigns.com/subscribe`,
-        params:query
-    });
+    
   }
   if (rqid) e.currentTarget.submit();
 }
