@@ -13,12 +13,12 @@ function submission(e) {
     query = new URLSearchParams({
       email: mail.value
     });
+    return;
     axios({
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
     });
-    return;
   }
   if (rqid) e.currentTarget.submit();
 }
