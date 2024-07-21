@@ -5,8 +5,7 @@ uri = new URL(window.location.href),
 rqid = false;
 
 function subscribe() {
-  var checkbox = document.getElementById("mailchimp"),
-  mail = document.getElementById("emailaddress").value;
+  var mail = document.getElementById("emailaddress").value;
   fetch("/subscribe?email=" + mail)
   .then(response => response.json())
   .then(data => {
@@ -20,7 +19,10 @@ function subscribe() {
 
 function submission(e) {
   e.preventDefault();
-  if (uri.pathname === "/contact") subscribe();
+  if (uri.pathname === "/contact") {
+    var checkbox = document.getElementById("mailchimp"),
+    if (checkbox.checked) subscribe();
+  }
   if (rqid) e.currentTarget.submit();
 }
 hmbr.addEventListener("click",function () {
