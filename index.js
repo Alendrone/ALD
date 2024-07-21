@@ -20,7 +20,7 @@ function subscribe() {
 function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") subscribe();
-  //if (rqid) e.currentTarget.submit();
+  if (rqid) e.currentTarget.submit();
 }
 hmbr.addEventListener("click",function () {
   mnu.style.display = "flex";
