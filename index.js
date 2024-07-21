@@ -7,14 +7,13 @@ rqid = false;
 
 async function subscribe() {
   var checkbox = document.getElementById("mailchimp"),
-  mail = document.getElementById("emailaddress").value,
-  query = new URLSearchParams({
-      email: mail
-  });
+  mail = document.getElementById("emailaddress").value;
   await axios({
       method:"POST",
       url:"https://arborlifedesigns.com/subscribe",
-      params:query
+      params:{
+        email:mail
+      }
   });
 }
 
