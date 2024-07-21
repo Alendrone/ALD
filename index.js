@@ -5,15 +5,17 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 
-async function subscribe() {
+function subscribe() {
   var checkbox = document.getElementById("mailchimp"),
   mail = document.getElementById("emailaddress").value;
-  await axios({
-      method:"POST",
-      url:"https://arborlifedesigns.com/subscribe",
-      params:{
-        email:mail
-      }
+  fetch("/subscribe?email=" + mail)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Handle the response data
+  })
+  .catch(error => {
+    console.error('Error:', error);
   });
 }
 
