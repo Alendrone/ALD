@@ -6,7 +6,7 @@ uri = new URL(window.location.href),
 rqid = false;
 
 async function subscribe() {
-  var subscribe = document.getElementById("mailchimp"),
+  var checkbox = document.getElementById("mailchimp"),
   mail = document.getElementById("emailaddress"),
   query = new URLSearchParams({
       email: mail.value
