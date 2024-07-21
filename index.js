@@ -21,7 +21,7 @@ async function subscribe() {
 function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
-    
+    subscribe();
   }
   if (rqid) e.currentTarget.submit();
 }
