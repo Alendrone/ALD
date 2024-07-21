@@ -14,7 +14,7 @@
   },
   "scripts": {
     "tailwind": "tailwindcss -o style.css -c ./tailwind.config.js",
-    "build": "esbuild ./payment.js ./index.js --platform=browser --legal-comments=none --bundle --outdir=js --minify --sourcemap"
+    "build": "esbuild ./payment.js --platform=browser --legal-comments=none --bundle --outdir=js --minify --sourcemap"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24",
