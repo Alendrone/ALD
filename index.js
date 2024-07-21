@@ -20,7 +20,7 @@ function subscribe() {
 function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
-    var checkbox = document.getElementById("mailchimp"),
+    var checkbox = document.getElementById("mailchimp");
     if (checkbox.checked) subscribe();
   }
   if (rqid) e.currentTarget.submit();
