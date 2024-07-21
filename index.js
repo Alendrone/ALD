@@ -13,7 +13,7 @@ async function subscribe() {
   });
   await axios({
       method:"POST",
-      url:`https://arborlifedesigns.com/subscribe`,
+      url:"https://arborlifedesigns.com/subscribe",
       params:query
   });
 }
