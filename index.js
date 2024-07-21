@@ -5,7 +5,7 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 
-function subscribe() {
+async function subscribe() {
   var checkbox = document.getElementById("mailchimp"),
   mail = document.getElementById("emailaddress").value;
   await axios({
