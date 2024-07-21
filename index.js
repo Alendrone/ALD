@@ -5,7 +5,7 @@ exit = document.getElementById("close-menu"),
 uri = new URL(window.location.href),
 rqid = false;
 
-async function submission(e) {
+function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
     var subscribe = document.getElementById("mailchimp"),
@@ -13,7 +13,7 @@ async function submission(e) {
     query = new URLSearchParams({
       email: mail.value
     });
-    await axios({
+    axios({
         method:"POST",
         url:`https://arborlifedesigns.com/subscribe`,
         params:query
