@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return_url: `${srcURL}/response?username=${usrname}`,
     payment_method_data: {
           billing_details: {
-            email:"info@arborlifedesigns.net",
+            email:"info@arborlifedesigns.com",
             phone:"+1 (201)-345-6789",
             address: {
               line1:"N/a",
