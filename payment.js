@@ -26,44 +26,60 @@ function formatNumber(n) {
 function formatCurrency(input, blur) {
     // appends $ to value, validates decimal side
     // and puts cursor back in right position.
+    
     // don't validate empty input
     if (input.value === "") return;
+    
     // get input value
-    var input_val = input.value,
-    newVal = parseFloat(input_val.substring(4)),
-    grossNew = calculateGrossAmount(newVal);
-    if (blur === "blur") {
-    if (oldGross !== newVal) {
-      input_val = "US$ " + grossNew.toString();
-      oldGross = grossNew;
-    }
-    else return;
+    var input_val = input.value;
+    
+    // Remove "US$ " prefix for calculations if it exists
+    if (input_val.startsWith("US$ ")) {
+        input_val = input_val.substring(4);
     }
     
+    // Remove any commas for proper parsing
+    var parsed_val = input_val.replace(/,/g, "");
+    var newVal = parseFloat(parsed_val);
+    var grossNew = calculateGrossAmount(newVal);
+    
+    if (blur === "blur") {
+        if (!oldGross || oldGross !== newVal) {
+            input_val = grossNew.toString();
+            oldGross = grossNew;
+        }
+        else return;
+    } else {
+        // If not on blur, keep the current input value for formatting
+        input_val = parsed_val;
+    }
     
     // original length
-    var original_len = input_val.length,
+    var original_len = input.value.length;
     // initial caret position 
-    caret_pos = input.selectionStart;
+    var caret_pos = input.selectionStart;
 
     // check for decimal
     if (input_val.indexOf(".") >= 0) {
         // get position of first decimal
         // this prevents multiple decimals from
         // being entered
-        var decimal_pos = input_val.indexOf("."),
+        var decimal_pos = input_val.indexOf(".");
         // split number by decimal point
-        left_side = input_val.substring(0, decimal_pos),
-        right_side = input_val.substring(decimal_pos);
+        var left_side = input_val.substring(0, decimal_pos);
+        var right_side = input_val.substring(decimal_pos + 1);
 
         // add commas to left side of number
         left_side = formatNumber(left_side);
 
         // validate right side
-        right_side = formatNumber(right_side);
+        right_side = right_side.replace(/\D/g, "");
 
         // On blur make sure 2 numbers after decimal
-        if (blur === "blur") right_side += "00";
+        if (blur === "blur") {
+            right_side += "00";
+            right_side = right_side.substring(0, 2);
+        }
 
         // Limit decimal to only 2 digits
         right_side = right_side.substring(0, 2);
@@ -79,17 +95,13 @@ function formatCurrency(input, blur) {
         input_val = "US$ " + input_val;
         
         // final formatting
-        if (blur === "blur" && input_val.length === 4) input_val += "0.50";
+        if (blur === "blur" && input_val === "US$ ") input_val += "0.50";
         else if (blur === "blur") input_val += ".00";
     }
-    /*for (i = usd.length;i;--i) {
-      cur = usd.charCodeAt(i - 1) - 46;
-      if (cur > 12 && -1 < cur) if (cur - 1) break;
-      return;
-    }*/
-    //if (blur === "blur") product = calculateGrossAmount(parseFloat(input_val.substring(4)));
+
     // send updated string to input
     input.value = input_val;
+    
     // put caret back in the right position
     var updated_len = input_val.length;
     caret_pos = updated_len - original_len + caret_pos;
@@ -110,31 +122,6 @@ oldGross;
 if (window.location.port.length > 1) portnumbr = `:${window.location.port}`;
 
 srcURL = `${window.location.protocol}//${window.location.hostname}${portnumbr}`;
-
-/*async function updatePaymentIntent(paymentIntentId, newAmount, confirmToken) {
-  try {
-    newAmount = Math.round(newAmount * 100);
-    let req = await axios({
-      method:"POST",
-      url:"/update-payment-intent",
-      baseURL:srcURL,
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": Dfaults[NDX],
-        "Accept-Language": "en-US,en;q=0.9",
-      },
-      data:{ paymentIntentId, newAmount, confirmToken },
-      responseType:"json",
-      responseEncoding:"utf8"
-    });
-
-    if (req.status !== 200) throw null;
-    //return {cliSecret:req.data.cliSecret,intentId:req.data.intentId};
-  } catch (err) {
-    console.error(err);
-    return err;
-  }
-}*/
 
 async function handleServerResponse (response,stripe) {
   if (response.error) {
@@ -235,20 +222,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   },
   stripe = Stripe("pk_live_51PVFAM07xQtIlHl5nneheqyHshNmnrBOzRIgxXQs6GYp7cmtOWsgQnRlQYwUFez0teYb8OYUlIKi91XLMvEm4gts00iISFGmfg",{apiVersion:"2024-06-20"}),
-  /*response = await axios({
-      method:"POST",
-      url:"/create-payment-intent",
-      baseURL:srcURL,
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": Dfaults[NDX],
-        "Accept-Language": "en-US,en;q=0.9",
-      },
-      data:{},
-      responseType:"json",
-      responseEncoding:"utf8"
-    }),
-  { clientSecret, paymentIntentID } = response.data,*/
   elements = stripe.elements({ appearance, loader:"always", externalPaymentMethodTypes:["external_interac","external_line_pay","external_paysafecard","external_samsung_pay","external_sezzle"],paymentMethodCreation: "manual", mode: "payment", amount:50, currency: "usd"}),
   paymentElement = elements.create("payment",options),
   form = document.getElementById("payment-form"),
@@ -259,7 +232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   paymentElement.on("ready", (e) => {
     paymentElement.on("change", (e) => {
       if (e.complete) {
-        if (!rqid) return;
+        if (!e.value || !e.value.type) return;
         paymentMethodType = e.value.type;
         submitBtn.disabled = false;
         console.log("Selected payment method type:", paymentMethodType);
@@ -270,29 +243,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     e.preventDefault();
     var money = document.getElementById("currency-field").value,
     email = document.getElementById("email-address").value,
-    bal = money.indexOf("US$ "),
     usrname = encodeURIComponent(email.split("@")[0]);
-    if (!bal) ++bal;
     
+    // Extract amount properly by removing "US$ " prefix and commas
+    const formattedAmount = money.startsWith("US$ ") ? money.substring(4) : money;
+    const cleanAmount = formattedAmount.replace(/,/g, "");
+    
+    if (submitBtn.disabled) return;
+    submitBtn.disabled = true;
 
-     const formatted = money.substring(bal*4).split(",").join("");
-
-  if (submitBtn.disabled) return;
-  submitBtn.disabled = true;
-    //const {intentId,cliSecret} = 
-
-  const {error: submitError} = await elements.submit();
+    const {error: submitError} = await elements.submit();
     if (submitError) {
       console.error(submitError.message);
       submitBtn.disabled = false;
       return;
     }
 
-   const {error, confirmationToken} = await stripe.createConfirmationToken({
+    const {error, confirmationToken} = await stripe.createConfirmationToken({
       elements,
       params: {
         return_url: `${srcURL}/response?username=${usrname}`,
-    payment_method_data: {
+        payment_method_data: {
           billing_details: {
             email:"info@arborlifedesigns.com",
             phone:"+1 (201)-345-6789",
@@ -308,68 +279,30 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
-  if (error) {
-      // This point is only reached if there's an immediate error when
-      // creating the ConfirmationToken. Show the error to your customer (for example, payment details incomplete)
-    console.error(error.message);
+    if (error) {
+      console.error(error.message);
       submitBtn.disabled = false;
       return;
     }
 
-  //updatePaymentIntent(paymentIntentID,document.getElementById("amount").value,confirmationToken.id);
-
-    /*await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: srcURL,
-    payment_method_data: {
-          billing_details: {
-            email:"info@arborlifedesigns.net",
-            phone:"+1 (201)-345-6789",
-            address: {
-              line1:"N/a",
-              line2:"N/a",
-              city:"N/a",
-              state:"N/a",
-              country:"US"
-            }
-          }
-        }
+    // Calculate amount in cents (stripe requires amount in smallest currency unit)
+    let totaldue = Math.round((parseFloat(cleanAmount) * 100));
+    if (!totaldue || isNaN(totaldue)) totaldue = 50;
+    
+    const res = await axios({
+      method:"POST",
+      url:"/create-confirm-intent",
+      baseURL:srcURL,
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": Dfaults[NDX],
+        "Accept-Language": "en-US,en;q=0.9",
       },
-      redirect: "if_required"
-    });
-  await axios({
-        method:"POST",
-        url:"/capture-payment",
-        baseURL:srcURL,
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": Dfaults[NDX],
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-        data:{paymentIntentId:paymentIntentID},
-        responseType:"json",
-        responseEncoding:"utf8"
+      data:{confirmationTokenId: confirmationToken.id, amount: totaldue, customer_email: email},
+      responseType:"json",
+      responseEncoding:"utf8"
     });
 
-  if (statusMsg !== "succeeded") document.getElementById("payment-message").textContent = `Something is amiss.  Payment has a ${statusMsg} status code.`;
-    else document.getElementById("payment-message").textContent = "Payment successful!";*/
-  let totaldue = Math.round((parseFloat(formatted) * 100));
-  //if (!totaldue) totaldue = 50;
-  const res = await axios({
-        method:"POST",
-        url:"/create-confirm-intent",
-        baseURL:srcURL,
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": Dfaults[NDX],
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-        data:{confirmationTokenId: confirmationToken.id, amount: totaldue, customer_email: email},
-        responseType:"json",
-        responseEncoding:"utf8"
-    });
-
-  handleServerResponse(res.data,stripe);
+    handleServerResponse(res.data,stripe);
   },{once:true});
 });
