@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   paymentElement.on("ready", (e) => {
     paymentElement.on("change", (e) => {
       if (e.complete) {
+        if (!rqid) return;
         if (!e.value || !e.value.type) return;
         paymentMethodType = e.value.type;
         submitBtn.disabled = false;
