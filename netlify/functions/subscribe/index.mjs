@@ -2,7 +2,26 @@ import axios from "axios";
 
 exports.handler = async function (event, context) {
   try {
-  const { email } = event.queryStringParameters;
+  const { email } = event.queryStringParameters,
+  queryStringParameters = new URLSearchParams(JSON.parse(event.body)),
+  hcaptcha = axios.create(
+  {
+    baseURL: "https://api.hcaptcha.com",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  });
+  let statum,
+  errout;
+
+  queryStringParameters.append("secret", process.env.HCAPTCHA_SECRET);
+
+  await hcaptcha.post("/siteverify", queryStringParameters).then((resp) => {
+    statum = resp.data.success;
+  }).catch((err) => {
+    errout = err;
+  });
+  if (!statum) throw new Error(errout);
   
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
