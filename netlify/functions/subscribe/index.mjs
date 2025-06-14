@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
   let statum,
   errout;
 
-  queryStringParameters.append("secret", process.env.HCAPTCHA_SECRET);
+  queryStringParameters.append("secret", process.env.SECRET);
 
   await hcaptcha.post("/siteverify", queryStringParameters).then((resp) => {
     statum = resp.data.success;
