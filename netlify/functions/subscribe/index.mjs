@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
   }).catch((err) => {
     errout = err.response.data;
   });
-  if (!statum) throw new Error(errout);
+  //if (!statum) throw new Error(errout);
   
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
