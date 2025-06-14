@@ -11,7 +11,7 @@ function subscribe() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({rqid}),
+    body: JSON.stringify({token:rqid}),
   };
   fetch("/subscribe?email=" + mail, options)
   .then(response => response.json())
