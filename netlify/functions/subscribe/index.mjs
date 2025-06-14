@@ -19,9 +19,9 @@ exports.handler = async function (event, context) {
   await hcaptcha.post("/siteverify", queryStringParameters).then((resp) => {
     statum = resp.data.success;
   }).catch((err) => {
-    errout = err.response.data;
+    errout = JSON.stringify(err.response.data);
   });
-  //if (!statum) throw new Error(errout);
+  if (!statum) throw new Error(errout);
   
   const json = {"members": [{"email_address": email,"status": "subscribed"}]},
   jsonData = JSON.stringify(json);
