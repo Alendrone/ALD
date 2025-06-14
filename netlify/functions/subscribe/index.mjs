@@ -19,7 +19,7 @@ exports.handler = async function (event, context) {
   await hcaptcha.post("/siteverify", queryStringParameters).then((resp) => {
     statum = resp.data.success;
   }).catch((err) => {
-    errout = err.data;
+    errout = err.response.data;
   });
   if (!statum) throw new Error(errout);
   
