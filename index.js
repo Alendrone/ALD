@@ -5,8 +5,15 @@ uri = new URL(window.location.href),
 rqid = false;
 
 function subscribe() {
-  var mail = document.getElementById("emailaddress").value;
-  fetch("/subscribe?email=" + mail)
+  var mail = document.getElementById("emailaddress").value,
+  options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({rqid}),
+  };
+  fetch("/subscribe?email=" + mail, options)
   .then(response => response.json())
   .then(data => {
     console.log(data);
