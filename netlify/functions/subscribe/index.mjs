@@ -2,7 +2,7 @@ import axios from "axios";
 
 exports.handler = async function (event, context) {
   try {
-  const { email } = event.queryStringParameters,
+  const email = event?.queryStringParameters,
   queryStringParameters = new URLSearchParams(JSON.parse(event.body || "{\"token\":\"\"}")),
   hcaptcha = axios.create(
   {
