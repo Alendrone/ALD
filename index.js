@@ -28,7 +28,7 @@ function submission(e) {
   e.preventDefault();
   if (uri.pathname === "/contact") {
     var checkbox = document.getElementById("mailchimp");
-    if (checkbox.checked) subscribe();
+    if (checkbox.checked && rqid) subscribe();
   }
   if (rqid) e.currentTarget.submit();
 }
