@@ -9,7 +9,8 @@ exports.handler = async function (event, context) {
     baseURL: "https://api.hcaptcha.com",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
-    }
+    },
+    responseType: "json"
   });
   let statum = false,
   errout;
