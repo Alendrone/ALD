@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
       "Content-Type": "application/x-www-form-urlencoded"
     }
   });
-  let statum,
+  let statum = false,
   errout;
 
   queryStringParameters.append("secret", process.env.SECRET);
