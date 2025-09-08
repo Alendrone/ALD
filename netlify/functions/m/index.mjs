@@ -88,8 +88,8 @@ exports.handler = async function (event, context) {
  try {
    if (!event.body.length) throw null;
    if (success === true) await resend.emails.send({
-    from: "ALD <info@arborlifedesigns.net>",
-    to: ["arborlifedesigns@gmail.com"],
+    from: "ALD <onboarding@resend.dev>",
+    to: ["arborlifedesigns@gmail.com","evanducote@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
     text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
     headers: {
