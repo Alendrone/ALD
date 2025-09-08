@@ -64,7 +64,7 @@ exports.handler = async function (event, context) {
  catch (err) {
    await resend.emails.send({
     from: "ALD <onboarding@resend.dev>",
-    to: ["educote1975@gmail.com"],
+    to: ["arborlifedesigns@gmail.com","ducote.help@gmail.com"],
     subject: `Potentional Correspondence from ${submit[0]}`,
     text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
     headers: {
