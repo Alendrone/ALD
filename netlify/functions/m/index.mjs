@@ -15,7 +15,7 @@ exports.handler = async function (event, context) {
   cur,
   success,
   response_json,
-  rawdata;
+  rawdata = "";
   
  for (;i;--i) {
     var cur = i - 1;
@@ -47,7 +47,9 @@ exports.handler = async function (event, context) {
      parameters:{
        "temperature": 0.1,
        "max_new_tokens": 4096
-   }}).then(function (resp) {
+   }}).catch(err => {
+     console.log(err);
+   }).then(function (resp) {
      rawdata = resp.generated_text.split("\n")[3];
    });
 
@@ -60,7 +62,7 @@ exports.handler = async function (event, context) {
    if (cur < 6) throw null;
  }
  catch (err) {
-   if (success === true) await resend.emails.send({
+   await resend.emails.send({
     from: "ALD <info@arborlifedesigns.net>",
     to: ["educote1975@gmail.com"],
     subject: `Potentional Correspondence from ${submit[0]}`,
