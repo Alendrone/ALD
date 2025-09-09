@@ -42,8 +42,8 @@ export async function handler(event, context) {
           content: `Perform an analysis on the text: "${submit[4]}", using just one number and determine its magnitude factoring in the text's meaning by comparing and contrasting whether it sounds like a suspicious/spam/scam/phishing/social engineering attempt (closer to zero), potentially suspicious/spam/scam/phishing/social engineering (closer to the mid-range), or not suspicious/spam/scam/phishing/social engineering (closer to nine) from one out of ten.\nFirst I require you MUST give me your best guess of the number from 0-9 and then your explanation after; no exceptions.`,
         },
       ],
-      max_tokens: 1024,
-      temperature: 0.1,
+      max_tokens: 4096,
+      temperature: 0.6,
     });
 
     rawdata = chatCompletion.choices[0].message.content;
