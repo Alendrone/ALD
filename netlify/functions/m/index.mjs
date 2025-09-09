@@ -1,6 +1,5 @@
-import {Resend} from "resend";
-import {InferenceClient} from "@huggingface/inference";
-import fetch from "node-fetch";
+import { Resend } from "resend";
+import { InferenceClient } from "@huggingface/inference";
 import queryString from "query-string";
 
 export async function handler (event, context) {
@@ -28,16 +27,14 @@ export async function handler (event, context) {
    response: submit[5]
   },
  encoded = queryString.stringify(data),
- response = await fetch("https://api.hcaptcha.com/siteverify",{
-  method:"POST",
-  headers:{
-    "Content-Type":"application/x-www-form-urlencoded"
+ response = await fetch("https://api.hcaptcha.com/siteverify", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
   },
   body: encoded
- }).then(rsp => rsp.json())
- .then(dat => {
-   response_json = dat;
- });
+});
+response_json = await response.json();
  success = response_json["success"];
  try {
    const client = new InferenceClient(process.env.TOKEN);
