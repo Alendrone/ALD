@@ -3,7 +3,7 @@ import {InferenceClient} from "@huggingface/inference";
 import fetch from "node-fetch";
 import queryString from "query-string";
 
-exports.handler = async function (event, context) {
+export async function (event, context) {
   var body = event.body,
   resend = new Resend(process.env.PASSPHRASE),
   uid = Math.floor(Date.now() / 1000).toString(),
