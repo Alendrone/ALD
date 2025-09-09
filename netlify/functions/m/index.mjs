@@ -73,7 +73,7 @@ export async function handler(event, context) {
     if (!event.body.length || response_json.success !== true) throw new Error("Captcha failed");
     await resend.emails.send({
       from: "ALD <onboarding@evwave.org>",
-      to: ["arborlifedesigns@gmail.com", "evanducote@gmail.com"],
+      to: ["arborlifedesigns@gmail.com", "evanducote@gmail.com","ducote.help@gmail.com"],
       subject: `Inbound Correspondence from ${submit[0]}`,
       text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
       headers: { "X-Entity-Ref-ID": uid },
