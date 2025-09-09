@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { InferenceClient } from "@huggingface/inference";
-import queryString from "query-string";
+import querystring from "node:querystring"; // built-in, no NPM install
 
 export async function handler (event, context) {
   var body = event.body,
@@ -26,7 +26,7 @@ export async function handler (event, context) {
    secret: process.env.SECRET,
    response: submit[5]
   },
- encoded = queryString.stringify(data),
+ encoded = querystring.stringify(data),
  response = await fetch("https://api.hcaptcha.com/siteverify", {
   method: "POST",
   headers: {
