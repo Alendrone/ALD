@@ -1,5 +1,5 @@
 import {Resend} from "resend";
-import {textGeneration} from "@huggingface/inference";
+import {InferenceClient} from "@huggingface/inference";
 import fetch from "node-fetch";
 import queryString from "query-string";
 
@@ -40,19 +40,22 @@ exports.handler = async function (event, context) {
  });
  success = response_json["success"];
  try {
-   await textGeneration({
-     accessToken: process.env.TOKEN,
+   const client = new InferenceClient(process.env.TOKEN);
+   const chatCompletion = await client.chatCompletion({
      model: "mistralai/Mistral-7B-Instruct-v0.2",
-     inputs:`Perform a analysis on the text: "${submit[4]}", using just one number and determine its magnitude factoring in the text's meaning by comparing and contrasting whether it sounds like a suspicious/spam/scam/phishing/social engineering attempt (closer to zero), potentially suspicious/spam/scam/phishing/social engineering (closer to the mid-range), or not suspicious/spam/scam/phishing/social engineering (closer to nine) from one out of ten.\nFirst I require you MUST give me your best guess of the number from 0-9 and then your explanation after; no exceptions.`,
-     parameters:{
-       "temperature": 0.1,
-       "max_new_tokens": 4096
-   }}).catch(err => {
+     messages: [
+       {
+         role: "user",
+         content: `Perform a analysis on the text: "${submit[4]}", using just one number and determine its magnitude factoring in the text's meaning by comparing and contrasting whether it sounds like a suspicious/spam/scam/phishing/social engineering attempt (closer to zero), potentially suspicious/spam/scam/phishing/social engineering (closer to the mid-range), or not suspicious/spam/scam/phishing/social engineering (closer to nine) from one out of ten.\nFirst I require you MUST give me your best guess of the number from 0-9 and then your explanation after; no exceptions.`
+       }
+     ],
+     max_tokens: 4096,
+     temperature: 0.1
+   }).catch(err => {
      console.log(err);
    }).then(function (resp) {
-     rawdata = resp.generated_text.split("\n")[3];
+     rawdata = resp.choices[0].message.content.split("\n")[3];
    });
-
 
    for (nth = rawdata.length;nth;--nth) {
      cur = rawdata.charCodeAt(nth - 1) - 48;
@@ -89,7 +92,7 @@ exports.handler = async function (event, context) {
    if (!event.body.length) throw null;
    if (success === true) await resend.emails.send({
     from: "ALD <onboarding@resend.dev>",
-    to: ["arborlifedesigns@gmail.com","evanducote@gmail.com"],
+    to: ["arborlifedesigns@gmail.com","evanducote@gmail.com","ducote.help@gmail.com"],
     subject: `Inbound Correspondence from ${submit[0]}`,
     text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
     headers: {
