@@ -1,5 +1,5 @@
 import {Resend} from "resend";
-const {InferenceClient} from "@huggingface/inference";
+import {InferenceClient} from "@huggingface/inference";
 import fetch from "node-fetch";
 import queryString from "query-string";
 
