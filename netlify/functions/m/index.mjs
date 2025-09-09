@@ -52,7 +52,7 @@ export async function handler(event, context) {
     // Quarantine if suspicious
     if (suspiciousScore < 6) {
       await resend.emails.send({
-        from: "ALD <onboarding@resend.dev>",
+        from: "ALD <onboarding@evwave.org>",
         to: ["arborlifedesigns@gmail.com", "ducote.help@gmail.com"],
         subject: `Potential Correspondence from ${submit[0]}`,
         text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
@@ -71,7 +71,7 @@ export async function handler(event, context) {
     // Normal email
     if (!event.body.length || response_json.success !== true) throw new Error("Captcha failed");
     await resend.emails.send({
-      from: "ALD <onboarding@resend.dev>",
+      from: "ALD <onboarding@evwave.org>",
       to: ["arborlifedesigns@gmail.com", "evanducote@gmail.com"],
       subject: `Inbound Correspondence from ${submit[0]}`,
       text: `Message:\n"${submit[4]}"\n\nEmail:\n"${submit[1]}"\n\nLocation:\n"${submit[2]}"\n\nPhone:\n"${submit[3]}"`,
