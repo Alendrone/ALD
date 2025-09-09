@@ -17,4 +17,3 @@ force = true
   
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["resend", "@huggingface/inference", "node-fetch", "query-string"]
