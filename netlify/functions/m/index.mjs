@@ -35,7 +35,8 @@ export async function handler(event, context) {
     // Run AI classification
     const client = new InferenceClient(process.env.TOKEN);
     const chatCompletion = await client.chatCompletion({
-      model: "mistralai/Mistral-7B-Instruct-v0.2",
+      provider: "auto",
+      model: "meta-llama/Llama-3.1-8B-Instruct",
       messages: [
         {
           role: "user",
