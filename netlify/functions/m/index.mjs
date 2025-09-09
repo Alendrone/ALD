@@ -1,7 +1,7 @@
 const {Resend} = require("resend");
 const {InferenceClient} = require("@huggingface/inference");
 const fetch = require("node-fetch");
-const queryString = require("query-string");
+const queryString = require("querystring");
 
 exports.handler = async function (event, context) {
   var body = event.body,
