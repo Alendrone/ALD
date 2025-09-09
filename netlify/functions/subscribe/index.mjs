@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function (event, context) {
+export async function handler (event, context) {
   try {
   const email = event?.queryStringParameters,
   queryStringParameters = new URLSearchParams(JSON.parse(event.body || "{\"response\":\"\"}")),
