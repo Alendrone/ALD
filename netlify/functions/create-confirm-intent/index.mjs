@@ -2,7 +2,7 @@ import Stripe from "stripe";
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY,{apiVersion:"2024-06-20"});
 
-exports.handler = async function (event, context) {
+export async function (event, context) {
   // Unsupported method
   if (event.httpMethod !== "POST") return {statusCode:405,body:JSON.stringify({error:"Method Not Allowed"})};
 
