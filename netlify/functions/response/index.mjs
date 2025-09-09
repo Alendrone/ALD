@@ -2,7 +2,7 @@ import Stripe from "stripe";
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY,{apiVersion:"2024-06-20"});
 
-exports.handler = async (event, context) => {
+export async function (event, context) {
   const { payment_intent, username } = event.queryStringParameters;
 
   try {
